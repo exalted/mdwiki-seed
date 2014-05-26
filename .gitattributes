@@ -44,3 +44,26 @@ CNAME text
 *.zip binary
 *.7z binary
 *.ttf binary
+
+## https://github.com/Danimoth/gitattributes/blob/e9c4312cabdbcf7f66205f3c3271336d4563e92c/Common.gitattributes (partial)
+
+# Documents
+*.doc	 diff=astextplain
+*.DOC	 diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF	 diff=astextplain
+*.rtf	 diff=astextplain
+*.RTF	 diff=astextplain
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
