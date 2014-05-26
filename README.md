@@ -16,11 +16,11 @@ First off fork this repo and call it something like `<MyProject>-wiki`.
 Create a New Wiki
 -----------------
 
-It all begins by creating an initial file structure for any language that you would like to support. For example, if you're interested having a wiki in English, then you will duplicate `ll_CC` folder and rename your copy to `en`. (For a complete list of languages [`ll`] and country codes [`CC`] consult [here](http://msdn.microsoft.com/en-us/library/ee825488).)
+It all begins by creating an initial file structure for any language that you would like to support. For example, if you're interested having a wiki in English, then you will duplicate `ll_CC` folder and rename your copy to `en`. (For a complete list of languages [`ll`] and country codes [`CC`] [see here](http://msdn.microsoft.com/en-us/library/ee825488).)
 
 `ll_CC` is a starter template folder which you shouldn't ever edit directly, since you may loose your changes when MDwiki gets updated later.
 
-> If you want to have your wiki in more than one language, then you duplicate `ll_CC` as many as necessary and name each copy with the appropriate language and country code. (Country code is optional and it is only useful if you want to distinguish, for instance, American English from British English, such as: `en_US` and `en_GB`.)
+> If you want to have your wiki in more than one language, then you duplicate `ll_CC` as many times as necessary and rename each copy with the appropriate language and country code. (Country code is optional and it is only useful if you want to distinguish, for instance, American English from British English, such as: `en_US` and `en_GB`.)
 
 Getting Started
 ---------------
@@ -30,7 +30,7 @@ _You should have a language wiki folder by now, if not, go back and read above t
 Suppose your first wiki is going to be in English, hence you must have a folder called `en`, as previously described.
 
 1. Open `index.html` file with your favorite plain text editor (the one that is at the same level where `ll_CC` and your language folder is located, **NOT the one inside your language folder**)
-1. Find where it says "Override `ll_CC` below with your default language & country code"
+1. Find where it says "Override `ll_CC` below with your default language and country code"
 1. Change refresh meta tag from `url=ll_CC/` to `url=en/` **(trailing `/` is very important)**
 
 Structure
@@ -53,11 +53,17 @@ Best Practices
 
 Instead of using absolute URLs when linking one wiki page to another, use relative URLs.
 
-For instance if `en/pages/foo.md` page had to link to `en/pages/bar.md`, it is enough to just `[Click here](bar.md)`. Same is true, almost, for the uploads, but a slightly different syntax is necessary: `![Image Title](/en/uploads/images/foo.png)`. **(Note the leading `/` is very important.)**
+For instance if `en/pages/foo.md` page had to link to `en/pages/bar.md`, it is enough to just add `[Click here](bar.md)` in your markdown.
 
 ### Don't Host Your Uploads in Git(Hub)
 
-Instead of hosting your uploads inside the `uploads` folder, consider using Dropbox, Google Drive, or any CDN.
+Instead of hosting your uploads inside the `uploads` folder, consider using Dropbox, Google Drive, or a CDN.
+
+### Add References to Uploads
+
+**Whenever you can, avoid hosting your uploads using Git(Hub).**
+
+If you _must_ add references to files hosted inside the `uploads` folder here's how to do it, for instance: `![Image Title](uploads/images/foo.png)`. Add that in your markdown and you're good to go.
 
 
 How to Preview
