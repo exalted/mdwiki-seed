@@ -1,6 +1,6 @@
 <!--
   -- Name of your wiki
-  -- Do NOT remove the preceding `#` character.
+  -- Do NOT remove the leading `#` character.
   -->
 
 # Your wiki name
