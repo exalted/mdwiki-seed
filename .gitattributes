@@ -10,6 +10,11 @@
 # The above will handle all files NOT found below
 #
 
+# Custom attributes for mdwiki & github pages
+*.md text
+*.json text
+CNAME text
+
 # These files are text and should be normalized (Convert crlf => lf)
 *.php text
 *.css text
