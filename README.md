@@ -8,6 +8,11 @@ Learn [Markdown](https://help.github.com/articles/github-flavored-markdown)! The
 
 Whenever you feel stuck, go to [MDwiki's own site](http://mdwiki.info) for further information.
 
+Fork It
+-------
+
+First off fork this repo and call it something like `<MyProject>-wiki`.
+
 Create a New Wiki
 -----------------
 
