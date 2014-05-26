@@ -1,3 +1,21 @@
+How to Preview
+==============
+
+Mac OS
+------
+
+The easiest way to serve up static sites on a Mac is to use [Anvil](http://anvilformac.com). Go ahead and download it from their website and add a site using the status bar icon, then simply select the folder where your wiki is located on your Mac.
+
+Windows
+-------
+
+> This section needs some :heart:.
+
+Linux
+-----
+
+> This section needs some :heart:.
+
 For Developers
 ==============
 
