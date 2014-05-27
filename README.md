@@ -25,8 +25,8 @@ First off, create a new (empty) repository on GitHub, then;
 ```bash
 git clone https://github.com/exalted/mdwiki-seed.git
 cd mdwiki-seed
-git remote add foobar <New Repository GitHub HTTPS/SSH Clone URL>
-git push --set-upstream foobar gh-pages
+git remote add foobar <HTTPS/SSH Clone URL of the New Repository>
+git push foobar gh-pages
 ```
 
 Create a New Wiki
