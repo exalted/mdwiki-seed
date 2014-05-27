@@ -84,7 +84,7 @@ Windows
 Linux
 -----
 
-> This section needs some :heart:.
+You can use [Prax](http://ysbaddaden.github.io/prax/). Prax is a pure ruby alternative to Pow!! that runs on GNU/Linux.
 
 
 For Developers
