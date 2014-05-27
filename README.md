@@ -79,7 +79,7 @@ The easiest way to serve up static sites on a Mac is to use [Anvil](http://anvil
 Windows
 -------
 
-> This section needs some :heart:.
+> This section needs some :heart:, but if you like you can change you computer
 
 Linux
 -----
