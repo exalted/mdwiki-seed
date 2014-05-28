@@ -16,11 +16,13 @@ First off fork this repo and call it something like `<MyProject>-wiki`.
 Multiple Wikis? Clone It.
 -------------------------
 
-In case would you like to create one than one wiki for the same GitHub user or organization, then forking won't cut it. At the moment of this writing, GitHub won't allow you to fork a single repository multiple times for the same account.
+In case would you like to create one than one wiki for the same GitHub user or organization, then forking won't cut it. At the moment of this writing GitHub won't allow you to fork a single repository multiple times for the same account.
 
-There's a workaround to it, however on GitHub's web interface you won't see the sign that says "forked from" on your cloned repository. Below instructions how to clone this repository using the CLI.
+There's a workaround to this, however on GitHub's web interface you won't see the sign that says "forked from" in your cloned repository.
 
-First off, create a new (empty) repository on GitHub, then;
+Below instructions how to clone this repository using the CLI:
+
+**First off, create a new (empty) repository on GitHub, then;**
 
 ```bash
 git clone https://github.com/exalted/mdwiki-seed.git
