@@ -22,6 +22,44 @@
 [Home](index.md)
 [ROS](pages/ROS.md)
 [Amalia Rover](pages/amalia_rover.md)
+[Subsystems]()
+
+  * # IO
+  * [IO](pages/io.md)
+  - - - -
+  * # Powertrain
+  - - - -
+  * # Suspension
+  - - - -
+  * # Vision
+  * [Cameras](pages/cameras.md)
+  * [Pantilt](pages/pantilt.md)
+  - - - -
+  * # Tools
+
+[Scripts]()
+
+  * [Scripts](pages/scripts.md)
+  * [Camera around](pages/camera_around.md)
+  - - - -
+  * # Misc
+  * [vision](pages/vision_scripts.md)
+
+[GUI](pages/gui.md)
+
+[Git]()
+
+  * [Git](pages/git.md)
+  * [Getting started](pages/git_getting_started.md)
+  * [Repositories](pages/git_repos.md)
+
+[Infrastructure]()
+
+  * [Rover first setup](pages/rover_first_setup.md)
+  * [RViz](pages/rviz.md)
+  * [Remote ROS connection](pages/remote.md)
+  * [Development guidelines](pages/development_guidelines.md)
+
 
 <!-- A more complex navigation example: ----------------------------------------
 
