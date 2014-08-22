@@ -35,6 +35,9 @@
   * [Cameras](pages/cameras.md)
   * [Pantilt](pages/pantilt.md)
   - - - -
+  * # Navigation
+  * [Pathfinding](pages/pathfinding.md)
+  - - - -
   * # Tools
 
 [Scripts]()
