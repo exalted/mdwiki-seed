@@ -45,8 +45,9 @@ var Panel = {
                                      '.dont_cross_corners:checked').val() !=='undefined';
 
             /* parseInt returns NaN (which is falsy) if the string can't be parsed */
-            weight = parseInt($('#astar_section .spinner').val()) || 1;
+            weight = parseInt($('#astar_section #astar_weight').val()) || 1;
             weight = weight >= 1 ? weight : 1; /* if negative or 0, use 1 */
+            slopeMultiplier = parseInt($('#astar_section #astar_slope_multiplier').val()) || 1;
 
             slopeCost = useSlope ? PF.Cost.slope : PF.Cost.nullCost;
 
@@ -64,6 +65,7 @@ var Panel = {
                     dontCrossCorners: dontCrossCorners,
                     heuristic: PF.Heuristic[heuristic],
                     slopeCost: slopeCost,
+                    slopeMultiplier: slopeMultiplier,
                     weight: weight
                 });
             }

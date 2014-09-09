@@ -35,9 +35,9 @@ among the above-mentioned algorithms, only ** AD* ** is dynamic. Probably it is 
 Slope
 ------
 
-In order to account the slope during path search, I think we can simply just change the heuristic function:
+In order to account the slope during path search, I think we can simply just change the parent-to-child cost function:
 
-$$ H(s) = M(s, e) + k \cdot (h(s) - h(p))  $$
+$$ G(s) = M(s, e) + k \cdot (h(s) - h(p))  $$
 
 where
 
@@ -49,7 +49,7 @@ $$ k \cdot (h(s) - h(p))  $$
 
 is the difference of height between the two current and parent node, multiplied by a costant **k**.
 
-** A* ** and its derivated algorithms are assured to find the optimal solution only if the heuristic works properly. I still need to check if this heuristic will break this property. We can naively run the customized ** AD* ** algorithm against the ** dijkstra ** during testing (taking in account the slope for each edge). dijkstra will always work anyway. If ** dijkstra ** gives a different result, we are wrong :)
+** A* ** and its derivated algorithms are assured to find the optimal solution only if the cost function works properly. I still need to check if this change will break this property. We can naively run the customized ** AD* ** algorithm against the ** dijkstra ** during testing (taking in account the slope for each edge). dijkstra will always work anyway. If ** dijkstra ** gives a different result, we are wrong :)
 
 
 Height
@@ -57,6 +57,12 @@ Height
 
 We need to provide to the algorithm the height for each node. We could write a [costmap_2d](http://wiki.ros.org/costmap_2d) plugin that checks the octree on each update and writes back the height in each node of the costmap. It will work but it does not seem a really clean solution (this way, we do not properly use the costmap). 
 
+Test it
+---- 
+
+A first version of the modified algorithm is available [here](/extra/simulation/pathfinding/visual/index.html)
+
+Use the mouse wheel to increase/decrease the height of the node.
 
 Links and references
 -----
