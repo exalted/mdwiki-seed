@@ -38,6 +38,9 @@ Slope
 ------
 
 <p class='inline-disqus' data-disqus-identifier="disqussion-3"></p>
+
+warning: This section must be updated
+
 In order to account the slope during path search, I think we can simply just change the parent-to-child cost function:
 
 $$ G(s) = M(s, e) + k \cdot (h(s) - h(p))  $$
@@ -65,9 +68,9 @@ Test it
 
 A first version of the modified algorithm is available at [sebastiano-barrera/PathFinding.js](https://github.com/sebastiano-barrera/PathFinding.js)
 
-You can [try it online](/extra/simulation/pathfinding/visual/index.html)
+![slope-pathfinding](/uploads/slope-pathfinding.png) 
 
-Use the mouse wheel to increase/decrease the height of the node.
+You can [try it online](/extra/simulation/pathfinding/visual/index.html)
 
 Links and references
 -----
