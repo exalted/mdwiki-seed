@@ -75,6 +75,7 @@ Links and references
 [Another good introduction to A* and pathfinding](http://theory.stanford.edu/~amitp/GameProgramming/)
 
 
+[gimmick:Disqus](team-diana-github)
 
 
 
