@@ -5,6 +5,7 @@
 ROS Navigation
 -------
 
+<p class='inline-disqus' data-disqus-identifier="disqussion-1"></p>
 ROS provides a [2D navigation stack](http://wiki.ros.org/navigation) with several libraries.
 The structure and interfaces of the entire stack are defined in the [nav_core package](http://wiki.ros.org/nav_core). Each interface handles a phase (e.g. global/local planning, localization) of the navigation system:
 
@@ -23,6 +24,7 @@ Algorithm
 hint: basically all algorithms are based on ** A* **. A good explanation to ** A* ** and pathfinding in general can be found [here](http://www.policyalmanac.org/games/aStarTutorial.htm). Further links are listed below 
 
 
+<p class='inline-disqus' data-disqus-identifier="disqussion-2"></p>
 Ros provides two nodes that implement the **global_planner** interface:
 
 * ** [navfn](http://wiki.ros.org/navfn) **
@@ -35,6 +37,7 @@ among the above-mentioned algorithms, only ** AD* ** is dynamic. Probably it is 
 Slope
 ------
 
+<p class='inline-disqus' data-disqus-identifier="disqussion-3"></p>
 In order to account the slope during path search, I think we can simply just change the parent-to-child cost function:
 
 $$ G(s) = M(s, e) + k \cdot (h(s) - h(p))  $$
@@ -73,9 +76,6 @@ Links and references
 [PathFinding.js](http://qiao.github.io/PathFinding.js/visual/) show some pathfinding algorithms at work
 
 [Another good introduction to A* and pathfinding](http://theory.stanford.edu/~amitp/GameProgramming/)
-
-
-[gimmick:Disqus](team-diana-github)
 
 
 

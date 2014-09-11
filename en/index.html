@@ -93,6 +93,11 @@
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
+<!--inline comments-->
+<script src="/extra/scripts/inlineDisqussions.js"></script>
+<link rel="stylesheet" type="text/css" href="/extra/css/inlineDisqussions.css" />
+
 <!-- START extlib/css/colorbox.css -->
 <style id="style:extlib/css/colorbox.css">/*
     ColorBox Core Style:
@@ -176,6 +181,20 @@
 
 </head>
 <body>
+<!--inline comments-->
+<script>
+  disqus_shortname = 'team-diana-github';
+  jQuery(document).delay(2000).ready(function() {
+    setTimeout(function() {
+      jQuery(".inline-disqus").inlineDisqussions({
+          highlighted: false,
+          position: 'left',
+          background: 'white',
+          maxWidth: 9999
+      });
+    }, 3000);
+  });
+</script>
     <noscript>
         This website requires Javascript to be enabled. Please turn on Javascript
         and reload the page.

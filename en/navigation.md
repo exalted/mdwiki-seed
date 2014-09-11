@@ -62,6 +62,7 @@
   * [RViz](pages/rviz.md)
   * [Remote ROS connection](pages/remote.md)
   * [Development guidelines](pages/development_guidelines.md)
+  * [This Wiki](pages/this_wiki.md)
 
 
 <!-- A more complex navigation example: ----------------------------------------
