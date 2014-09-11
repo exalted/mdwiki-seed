@@ -4,9 +4,6 @@
  * See https://github.com/jakesgordon/javascript-state-machine
  * for the document of the StateMachine module.
  */
-
-var MOUSE_WHEEL_COLOR_MULTIPLIER = 15;
-
 var Controller = StateMachine.create({
     initial: 'none',
     events: [
@@ -86,16 +83,23 @@ var Controller = StateMachine.create({
             to:   'erasingWall'
         },
         {
+            name: 'startPainting',
+            from: ['ready', 'finished'],
+            to: 'painting',
+        },
+        {
             name: 'rest',
-            from: ['draggingStart', 'draggingEnd', 'drawingWall', 'erasingWall'],
+            from: ['draggingStart', 'draggingEnd', 'drawingWall', 'erasingWall', 'painting'],
             to  : 'ready'
         },
     ],
 });
 
 $.extend(Controller, {
-    gridSize: [64, 32], // number of nodes horizontally and vertically
+    gridSize: [64, 36], // number of nodes horizontally and vertically
     operationsPerSecond: 300,
+    paintRadius: 2,
+    brushDepth: 10,
 
     /**
      * Asynchronous transition from `none` state to `ready` state.
@@ -106,19 +110,17 @@ $.extend(Controller, {
 
         this.grid = new PF.Grid(numCols, numRows);
 
+        this.$buttons = $('.control_button');
+        this.hookPathFinding();
+
         View.init({
             numCols: numCols,
             numRows: numRows
-        });
-        View.generateGrid(function() {
-            Controller.setDefaultStartEndPos();
+        }, function() {
+	    Controller.setDefaultStartEndPos();
             Controller.bindEvents();
             Controller.transition(); // transit to the next state (ready)
-        });
-
-        this.$buttons = $('.control_button');
-
-        this.hookPathFinding();
+	});
 
         return StateMachine.ASYNC;
         // => ready
@@ -130,6 +132,11 @@ $.extend(Controller, {
     oneraseWall: function(event, from, to, gridX, gridY) {
         this.setWalkableAt(gridX, gridY, true);
         // => erasingWall
+    },
+    onstartPainting: function(event, form, to, gridX, gridY) {
+        console.log("=> startPainting");
+	this.brushDepth = $("#brush-depth").val() || this.brushDepth;
+        this.paintAt(gridX, gridY);
     },
     onsearch: function(event, from, to) {
         var grid,
@@ -195,7 +202,6 @@ $.extend(Controller, {
             Controller.clearOperations();
             Controller.clearAll();
             Controller.buildNewGrid();
-            Controller.setDefaultStartEndPos();
         }, View.nodeColorizeEffect.duration * 1.2);
         // => ready
     },
@@ -321,7 +327,7 @@ $.extend(Controller, {
                     x: this.x,
                     y: this.y,
                     attr: 'closed',
-                    value: v
+                    value: v && this.f
                 });
             },
             get tested() {
@@ -342,7 +348,6 @@ $.extend(Controller, {
     },
     bindEvents: function() {
         $('#draw_area').mousedown($.proxy(this.mousedown, this));
-        $('#draw_area').mousewheel($.proxy(this.mousewheel, this));
         $(window)
             .mousemove($.proxy(this.mousemove, this))
             .mouseup($.proxy(this.mouseup, this));
@@ -376,13 +381,12 @@ $.extend(Controller, {
         this.operations = [];
     },
     clearFootprints: function() {
-        View.clearFootprints(this.grid);
-        View.clearPath(this.grid);
+        View.clearFootprints();
+        View.clearPath();
     },
     clearAll: function() {
         this.clearFootprints();
-        View.clearBlockedNodes(this.grid);
-        View.clearAll(this.grid);
+        View.clearBlockedNodes();
     },
     buildNewGrid: function() {
         this.grid = new PF.Grid(this.gridSize[0], this.gridSize[1]);
@@ -401,29 +405,24 @@ $.extend(Controller, {
             this.dragEnd();
             return;
         }
-        if (this.can('drawWall') && grid.isWalkableAt(gridX, gridY)) {
-            this.drawWall(gridX, gridY);
-            return;
-        }
-        if (this.can('eraseWall') && !grid.isWalkableAt(gridX, gridY)) {
-            this.eraseWall(gridX, gridY);
-        }
-    },
-    clamp: function(x, min, max) {
-      return Math.max(min, Math.min(max, x));
-    },
-    mousewheel: function(event) {
-        var coord = View.toGridCoordinate(event.pageX, event.pageY),
-            gridX = coord[0],
-            gridY = coord[1],
-            grid  = this.grid;
-
-        if (grid.isWalkableAt(gridX, gridY)) {
-            var currentHeight = grid.getHeightAt(gridX, gridY);
-            var newHeight = this.clamp(currentHeight + 
-                event.deltaY * MOUSE_WHEEL_COLOR_MULTIPLIER, 0, 255);
-            this.setHeightAt(gridX, gridY, newHeight);
-            return;
+        
+        switch (Panel.currentTool) {
+        case 'draw-wall':
+            if (this.can('drawWall') && grid.isWalkableAt(gridX, gridY)) {
+                this.drawWall(gridX, gridY);
+                return;
+            }
+            if (this.can('eraseWall') && !grid.isWalkableAt(gridX, gridY)) {
+                this.eraseWall(gridX, gridY);
+                return;
+            }
+            break;
+        case 'paint-hill':
+            if (this.can('startPainting')) {
+                this.startPainting(gridX, gridY);
+                return;
+            }
+            break;
         }
     },
     mousemove: function(event) {
@@ -438,20 +437,21 @@ $.extend(Controller, {
 
         switch (this.current) {
         case 'draggingStart':
-            if (grid.isWalkableAt(gridX, gridY)) {
+            if (grid.isWalkableAt(gridX, gridY))
                 this.setStartPos(gridX, gridY);
-            }
             break;
         case 'draggingEnd':
-            if (grid.isWalkableAt(gridX, gridY)) {
+            if (grid.isWalkableAt(gridX, gridY))
                 this.setEndPos(gridX, gridY);
-            }
             break;
         case 'drawingWall':
             this.setWalkableAt(gridX, gridY, false);
             break;
         case 'erasingWall':
             this.setWalkableAt(gridX, gridY, true);
+            break;
+        case 'painting':
+            this.paintAt(gridX, gridY);
             break;
         }
     },
@@ -514,13 +514,21 @@ $.extend(Controller, {
         this.endY = gridY;
         View.setEndPos(gridX, gridY);
     },
-    setHeightAt: function(gridX, gridY, newHeight) {
-        this.grid.setHeightAt(gridX, gridY, newHeight);
-        View.setAttributeAt(gridX, gridY, 'height', newHeight);
-    },
     setWalkableAt: function(gridX, gridY, walkable) {
         this.grid.setWalkableAt(gridX, gridY, walkable);
         View.setAttributeAt(gridX, gridY, 'walkable', walkable);
+    },
+    paintAt: function(gridX, gridY) {
+        var radius = this.paintRadius;
+        this.grid.paintHill(gridX, gridY, radius, this.brushDepth);
+	View.setAttributeRect(gridX - radius, gridY - radius,
+                              gridX + radius, gridY + radius,
+			      'height',
+                              this.grid.nodes,
+			      function (node) {
+				  return Math.floor(node.height);
+			      });
+	
     },
     isStartPos: function(gridX, gridY) {
         return gridX === this.startX && gridY === this.startY;

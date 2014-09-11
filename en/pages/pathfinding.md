@@ -63,7 +63,9 @@ We need to provide to the algorithm the height for each node. We could write a [
 Test it
 ---- 
 
-A first version of the modified algorithm is available [here](/extra/simulation/pathfinding/visual/index.html)
+A first version of the modified algorithm is available at [sebastiano-barrera/PathFinding.js](https://github.com/sebastiano-barrera/PathFinding.js)
+
+You can [try it online](/extra/simulation/pathfinding/visual/index.html)
 
 Use the mouse wheel to increase/decrease the height of the node.
 

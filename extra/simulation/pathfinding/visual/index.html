@@ -9,11 +9,8 @@
 
     <script type="text/javascript" src="./lib/raphael-min.js"></script>
     <script type="text/javascript" src="./lib/es5-shim.min.js"></script>
-    <script type="text/javascript" src="./lib/interpolate-color.js"></script>
     <script type="text/javascript" src="./lib/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="./lib/jquery.color-2.1.2.min.js"></script>
-    <script type="text/javascript" src="./lib/jquery.mousewheel.min.js"></script>
-    <script type="text/javascript" src="./lib/state-machine.min.js"></script>
+    <script type="text/javascript" src="./lib/state-machine.js"></script>
     <script type="text/javascript" src="./lib/async.min.js"></script>
 
     <script type="text/javascript" src="./lib/ui/jquery.ui.core.min.js"></script>
@@ -33,7 +30,7 @@
   <body>
     <div id="draw_area"></div>
 
-    <div id="instructions_panel" class="panel">
+    <div id="instructions_panel" class="panel" style="display: none;">
       <header>
         <h2 class="header_title">Instructions</h2>
         <span id="hide_instructions">hide</span>
@@ -46,10 +43,31 @@
     </div>
 
     <div id="algorithm_panel" class="panel right_panel">
+
+      <div id="play_panel">
+	<button id="button1" class="control_button">Start Search</button>
+	<button id="button2" class="control_button">Pause Search</button>
+	<button id="button3" class="control_button">Clear Walls</button>
+      </div>
+
       <header><h2 class="header_title">Select Algorithm</h2></header>
+      
+      <ul id="tools">
+	<li>
+	  <label for="tool-select">Tool:</label>
+	  <select id="tool-select">
+	    <option value="paint-hill">Paint hill</option>
+	    <option value="draw-wall">Draw wall</option>
+	  </select>
+	</li>
+	<li>
+	  <label for="brush-depth">Brush depth:</label>
+	  <input type="number" id="brush-depth" value="10" />
+	</li>
+      </ul>
 
       <div class="accordion">
-        <h3 id="astar_header"><a href="#">A*</a></h3>
+        <h3 id="astar_header"><a href="#">A* + Slope</a></h3>
         <div id="astar_section" class="finder_section">
           <header class="option_header">
             <h3>Heuristic</h3>
@@ -73,12 +91,11 @@
             <label class="option_label">Bi-directional</label> <br>
             <input type="checkbox" class="dont_cross_corners">
             <label class="option_label">Don't Cross Corners</label> <br>
-            <input type="checkbox" class="use_slope" checked>
-            <label class="option_label">Take slope into account</label> <br>
-            <input class="spinner" id="astar_weight" value="1">
+            <input class="spinner" name="astar_weight" value="1">
             <label class="option_label">Weight</label> <br>
-            <input class="spinner" id="astar_slope_multiplier" value="1">
-            <label class="option_label">Slope multiplier</label> <br>
+	    <input class="spinner" id="slope-weight"
+		   name="astar_slopeweight" value="1">
+            <label class="option_label">Slope weight</label> <br>
           </div>
         </div>
 
@@ -240,12 +257,6 @@
 
       </div><!-- .accordion -->
     </div><!-- #algorithm_panel -->
-
-    <div id="play_panel" class="panel right_panel">
-      <button id="button1" class="control_button">Start Search</button>
-      <button id="button2" class="control_button">Pause Search</button>
-      <button id="button3" class="control_button">Clear Walls</button>
-    </div>
 
     <div id="stats"></div>
 

@@ -3,6 +3,8 @@
  * It uses raphael.js to show the grids.
  */
 var View = {
+    isSupported: function() { return Raphael.svg ? true : false; },
+
     nodeSize: 30, // width and height of a single node, in pixel
     nodeStyle: {
         normal: {
@@ -34,7 +36,7 @@ var View = {
             'stroke-opacity': 0.2,
         },
         tested: {
-            fill: '#e5e5e5',
+            fill: 'orange', // '#e5e5e5',
             'stroke-opacity': 0.2,
         },
     },
@@ -51,11 +53,14 @@ var View = {
         'stroke-width': 3,
     },
     supportedOperations: ['opened', 'closed', 'tested'],
-    init: function(opts) {
+    maxHeight: 300,
+    init: function(opts, callback) {
         this.numCols      = opts.numCols;
         this.numRows      = opts.numRows;
-        this.paper        = this.paper || Raphael('draw_area');
+        this.paper        = Raphael('draw_area');
         this.$stats       = $('#stats');
+
+	this.generateGrid(callback);
     },
     /**
      * Generate the grid asynchronously.
@@ -76,7 +81,6 @@ var View = {
             rects       = this.rects = [],
             $stats      = this.$stats;
 
-        paper.clear();
         paper.setSize(numCols * nodeSize, numRows * nodeSize);
 
         createRowTask = function(rowId) {
@@ -85,7 +89,7 @@ var View = {
                 for (j = 0; j < numCols; ++j) {
                     x = j * nodeSize;
                     y = rowId * nodeSize;
-
+                    
                     rect = paper.rect(x, y, nodeSize, nodeSize);
                     rect.attr(normalStyle);
                     rects[rowId].push(rect);
@@ -110,7 +114,7 @@ var View = {
             tasks.push(sleep);
         }
 
-        async.series(tasks, function() {
+        async.parallel(tasks, function() {
             if (callback) {
                 callback();
             }
@@ -144,45 +148,105 @@ var View = {
             this.endNode.attr({ x: coord[0], y: coord[1] }).toFront();
         }
     },
+
+    setAttributeRect: function(minx, miny, maxx, maxy, attr, valueMatrix, keyFn) {
+        if (minx < 0) minx = 0;
+        if (miny < 0) miny = 0;
+        if (maxx > this.numCols - 1)
+            maxx = this.numCols - 1;
+        if (maxy > this.numRows - 1)
+            maxx = this.numRows - 1;
+        
+        var x, y, val;
+        for(y=miny; y <= maxy; y++) {
+            for(x=minx; x <= maxx; x++) {
+                val = keyFn(valueMatrix[y][x]);
+                this.setAttributeAt(x, y, attr, val);
+            }
+        }
+    },
+    
     /**
      * Set the attribute of the node at the given coordinate.
      */
     setAttributeAt: function(gridX, gridY, attr, value) {
-        var color, nodeStyle = this.nodeStyle;
+        var nodeStyle = this.nodeStyle, color;
         switch (attr) {
         case 'walkable':
+	    /// TODO Maybe remove this one statement?
             color = value ? nodeStyle.normal.fill : nodeStyle.blocked.fill;
             this.setWalkableAt(gridX, gridY, value);
             break;
-        case 'height':
-            this.setHeightAt(gridX, gridY, value);
-            break;
         case 'opened':
-            this.colorizeNode(this.rects[gridY][gridX], nodeStyle.opened.fill);
+            this.colorizeCircle(this.rects[gridY][gridX], nodeStyle.opened.fill);
             this.setCoordDirty(gridX, gridY, true);
             break;
         case 'closed':
-            this.colorizeNode(this.rects[gridY][gridX], nodeStyle.closed.fill);
-            this.setCoordDirty(gridX, gridY, true);
-            break;
+	    return this.setClosedAt(gridX, gridY, value);
         case 'tested':
             color = (value === true) ? nodeStyle.tested.fill : nodeStyle.normal.fill;
-            this.colorizeNode(this.rects[gridY][gridX], color);
+            this.colorizeCircle(this.rects[gridY][gridX], color);
             this.setCoordDirty(gridX, gridY, true);
             break;
+        case 'height':
+	    return this.setHeightAt(gridX, gridY, value);
         case 'parent':
             // XXX: Maybe draw a line from this node to its parent?
             // This would be expensive.
             break;
         default:
             console.error('unsupported operation: ' + attr + ':' + value);
-            return;
-        }
+            break;
+	}
+    },
+    setClosedAt: function(gridX, gridY, weight) {
+	var rect = this.rects[gridY][gridX];
+	var text = weight ? weight.toFixed(1) : '-';
+
+        this.colorizeCircle(rect, this.nodeStyle.closed.fill);
+        this.setCoordDirty(gridX, gridY, true);
+
+	if (!rect.weightLabel) {
+	    rect.weightLabel = this.paper.text(rect.attrs.x + 2,
+					       rect.attrs.y + rect.attrs.height * 3 / 4,
+					       text);
+	    rect.weightLabel.attr('fill', 'black');
+	    rect.weightLabel.attr('text-anchor', 'start');
+	} else {
+	    rect.weightLabel.attr('text', text);
+	}
+    },
+    setHeightAt: function(gridX, gridY, height) {
+        var color = Raphael.hsl( 246,
+				 100,
+                                 100.0 - 50.0 * Math.min(height,300) / 300.0 );
+	var rect = this.rects[gridY][gridX];
+        this.colorizeNode(rect, color);
+	if (!rect.heightLabel) {
+	    rect.heightLabel = this.paper.text(rect.attrs.x + rect.attrs.width - 2,
+					       rect.attrs.y + rect.attrs.height / 4,
+					       height);
+	    rect.heightLabel.attr('fill', 'black');
+	    rect.heightLabel.attr('text-anchor', 'end');
+	} else {
+	    rect.heightLabel.attr('text', height);
+	}
     },
     colorizeNode: function(node, color) {
         node.animate({
             fill: color
         }, this.nodeColorizeEffect.duration);
+    },
+    colorizeCircle: function(node, color) {
+	if (!node.circle) {
+	    node.circle = this.paper.circle(node.attrs.x + node.attrs.width / 2,
+					    node.attrs.y + node.attrs.height / 2,
+					    node.attrs.width / 5);
+	    node.circle.attr('stroke-opacity', 0.4);
+	}
+	
+	node.circle.animate({ fill: color },
+			    this.nodeColorizeEffect.duration);
     },
     zoomNode: function(node) {
         node.toFront().attr({
@@ -220,40 +284,24 @@ var View = {
             this.zoomNode(node);
         }
     },
-    colorForHeight: function(height) {
-      if(height == 0) return this.nodeStyle.normal.fill;
-      var green = 'hsl(120, 100%, 50%)'; 
-      var brown = 'hsl(0, 25%, 35%)';
-      var color =  $.Color(InterpolateColor.interpolate(green, brown, height/255)).toHexString();
-      return color;
-    },
-    resetNode: function(gridX, gridY, height) {
-        var node = this.rects[gridY][gridX]; 
-        this.setCoordDirty(gridX, gridY, false);
-        this.colorizeNode(node, this.colorForHeight(height));
-    },
-    setHeightAt: function(gridX, gridY, value) {
-        var node = this.rects[gridY][gridX]; 
-        this.colorizeNode(node, this.colorForHeight(value));
-    },
-    clearAll: function(grid) {
-        var x, y;
-        for (y = 0; y < grid.height; ++y) {
-          for (x = 0; x < grid.height; ++x) {
-            this.resetNode(x, y, 0);
-          }
-        }
-    },
-    clearFootprints: function(grid) {
-        var i, x, y, coord, coords = this.getDirtyCoords();
+    clearFootprints: function() {
+        var i, x, y, coord, rect, coords = this.getDirtyCoords();
         for (i = 0; i < coords.length; ++i) {
             coord = coords[i];
             x = coord[0];
             y = coord[1];
-            this.resetNode(x, y, grid.getHeightAt(x,y));
+	    rect = this.rects[y][x];
+            rect.attr(this.nodeStyle.normal);
+	    if (rect.weightLabel)
+		rect.weightLabel.attr('text', '');
+	    if (rect.circle) {
+		rect.circle.remove();
+		rect.circle = null;
+	    }
+            this.setCoordDirty(x, y, false);
         }
     },
-    clearBlockedNodes: function(grid) {
+    clearBlockedNodes: function() {
         var i, j, blockedNodes = this.blockedNodes;
         if (!blockedNodes) {
             return;
@@ -289,7 +337,7 @@ var View = {
 
         return strs.join('');
     },
-    clearPath: function(grid) {
+    clearPath: function() {
         if (this.path) {
             this.path.remove();
         }

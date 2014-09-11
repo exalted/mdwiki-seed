@@ -1,12 +1,15 @@
 body {
     padding: 0px;
     margin: 0px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 input {
     cursor: pointer;
 }
+
+::selection { background: none; }
+::-moz-selection { background: none; }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0px;
@@ -17,29 +20,28 @@ h1, h2, h3, h4, h5, h6 {
 .header_title {
     font-size: 120%;
     font-weight: bold;
-    padding-bottom: 5px;
-    margin-top: -10px;
+    padding-bottom: 2px;
+    margin-top: 10px;
+    border-bottom: 1px solid white;
 }
-
 
 .panel {
     position: fixed;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
-    border-radius: 8px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     cursor: default;
+    overflow: scroll;
 }
 
 .right_panel {
     width: 250px;
-    right: 20px;
+    height: 100%;
 }
 
 #algorithm_panel {
-    right: 20px;
-    top: 20px;
+    right: 0px;
+    top: 0px;
 }
 
 #instructions_panel {
@@ -73,11 +75,11 @@ h1, h2, h3, h4, h5, h6 {
 button {
     border: none;
     background: rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
+    border-radius: 3px;
     font-size: 90%;
     cursor: pointer;
     padding: 2px 8px;
-    margin: 0 2%;
+    /* margin: 0 2%; */
     width: 28%;
 }
 
@@ -140,4 +142,24 @@ footer {
 
 .spinner {
     width: 2em;
+}
+
+#tools { padding: 0; }
+
+#tools li {
+    list-style-type: none;
+}
+
+#tools li * { 
+    display: inline-block; 
+    width: 3cm;
+}
+
+#tools li label {
+    width: 2.5cm;
+    text-align: right;
+}
+
+#brush-depth {
+    width: 1.5cm;
 }

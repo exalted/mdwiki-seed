@@ -19,7 +19,14 @@ var Panel = {
             top: $algo.offset().top + $algo.outerHeight() + 20
         });
         $('#button2').attr('disabled', 'disabled');
+
+	Panel.currentTool = $("#tool-select").val();
+	$("#tool-select").change(function(event) {
+	    Panel.currentTool = event.target.value;
+	});
     },
+
+
     /**
      * Get the user selected path-finder.
      * TODO: clean up this messy code.
@@ -39,17 +46,12 @@ var Panel = {
                                      '.allow_diagonal:checked').val() !== 'undefined';
             biDirectional = typeof $('#astar_section ' +
                                      '.bi-directional:checked').val() !=='undefined';
-            useSlope = typeof $('#astar_section ' +
-                                     '.use_slope:checked').val() !=='undefined';
             dontCrossCorners = typeof $('#astar_section ' +
                                      '.dont_cross_corners:checked').val() !=='undefined';
 
             /* parseInt returns NaN (which is falsy) if the string can't be parsed */
-            weight = parseInt($('#astar_section #astar_weight').val()) || 1;
+            weight = parseInt($('#astar_section .spinner').val()) || 1;
             weight = weight >= 1 ? weight : 1; /* if negative or 0, use 1 */
-            slopeMultiplier = parseInt($('#astar_section #astar_slope_multiplier').val()) || 1;
-
-            slopeCost = useSlope ? PF.Cost.slope : PF.Cost.nullCost;
 
             heuristic = $('input[name=astar_heuristic]:checked').val();
             if (biDirectional) {
@@ -60,13 +62,13 @@ var Panel = {
                     weight: weight
                 });
             } else {
+		var slopeWeight = parseInt($('#astar_section #slope-weight').val()) || 1;
                 finder = new PF.AStarFinder({
                     allowDiagonal: allowDiagonal,
                     dontCrossCorners: dontCrossCorners,
                     heuristic: PF.Heuristic[heuristic],
-                    slopeCost: slopeCost,
-                    slopeMultiplier: slopeMultiplier,
-                    weight: weight
+                    weight: weight,
+		    slopeWeight: slopeWeight
                 });
             }
             break;
