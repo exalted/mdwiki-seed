@@ -5,7 +5,7 @@
 ROS Navigation
 -------
 
-<p class='inline-disqus' data-disqus-identifier="disqussion-1"></p>
+<p class='inline-disqus' data-disqus-identifier="pathfinding-1"></p>
 ROS provides a [2D navigation stack](http://wiki.ros.org/navigation) with several libraries.
 The structure and interfaces of the entire stack are defined in the [nav_core package](http://wiki.ros.org/nav_core). Each interface handles a phase (e.g. global/local planning, localization) of the navigation system:
 
@@ -24,7 +24,7 @@ Algorithm
 hint: basically all algorithms are based on ** A* **. A good explanation to ** A* ** and pathfinding in general can be found [here](http://www.policyalmanac.org/games/aStarTutorial.htm). Further links are listed below 
 
 
-<p class='inline-disqus' data-disqus-identifier="disqussion-2"></p>
+<p class='inline-disqus' data-disqus-identifier="pathfinding-2"></p>
 Ros provides two nodes that implement the **global_planner** interface:
 
 * ** [navfn](http://wiki.ros.org/navfn) **
@@ -37,23 +37,28 @@ among the above-mentioned algorithms, only ** AD* ** is dynamic. Probably it is 
 Slope
 ------
 
-<p class='inline-disqus' data-disqus-identifier="disqussion-3"></p>
 
-warning: This section must be updated
+In order to account the slope during path search, the parent-to-child cost can be changed.
 
-In order to account the slope during path search, I think we can simply just change the parent-to-child cost function:
+**Plain A* **
 
-$$ G(s) = M(s, e) + k \cdot (h(s) - h(p))  $$
+```js
+// get the distance between current node and the neighbor
+// and calculate the next g score
+ng = heuristic(x - node.x, y - node.y);
+```
 
-where
+** A* with Slope ** (see **Test it** section)
+```js
+// get the distance between current node and the neighbor
+// and calculate the next g score
+hypotxy = heuristic(x - node.x, y - node.y);
+ng = node.g
++ heuristic(weight * hypotxy, 
+    slopeWeight * abs(neighbor.height - node.height));
+```
+<p class='inline-disqus' data-disqus-identifier="pathfinding-3"></p>
 
-$$ M(s, e) $$ is the distance between the current node and the destination node
-
-and 
-
-$$ k \cdot (h(s) - h(p))  $$
-
-is the difference of height between the two current and parent node, multiplied by a costant **k**.
 
 ** A* ** and its derivated algorithms are assured to find the optimal solution only if the cost function works properly. I still need to check if this change will break this property. We can naively run the customized ** AD* ** algorithm against the ** dijkstra ** during testing (taking in account the slope for each edge). dijkstra will always work anyway. If ** dijkstra ** gives a different result, we are wrong :)
 
