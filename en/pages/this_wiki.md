@@ -15,6 +15,8 @@ Comments can be written by anyone. In order to add a placeholder for comment ins
 <p class='inline-disqus' data-disqus-identifier="ID"></p>
 ```
 
+warning: Remember to add one empty line above and under when embedding html inside markdown.
+
 where __ID__ is a unique id (for the entire wiki). The __ID__ helps to edit the wiki without having to
 care about the order of comments. In order to maintain unique id, prepend the name of the page.
 

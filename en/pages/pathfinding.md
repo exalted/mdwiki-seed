@@ -6,6 +6,7 @@ ROS Navigation
 -------
 
 <p class='inline-disqus' data-disqus-identifier="pathfinding-1"></p>
+
 ROS provides a [2D navigation stack](http://wiki.ros.org/navigation) with several libraries.
 The structure and interfaces of the entire stack are defined in the [nav_core package](http://wiki.ros.org/nav_core). Each interface handles a phase (e.g. global/local planning, localization) of the navigation system:
 
@@ -25,31 +26,35 @@ hint: basically all algorithms are based on ** A* **. A good explanation to ** A
 
 
 <p class='inline-disqus' data-disqus-identifier="pathfinding-2"></p>
+
 Ros provides two nodes that implement the **global_planner** interface:
 
-* ** [navfn](http://wiki.ros.org/navfn) **
-  which uses **Dijkstra** or** A* **
-* ** [sbpl](http://wiki.ros.org/sbpl) **
+1. ** [navfn](http://wiki.ros.org/navfn) **
+  which uses **Dijkstra** or ** A* ** 
+2. ** [sbpl](http://wiki.ros.org/sbpl) **
   which implements several algorithms (but only** ARA* **and** AD* **will work out of the box)
 
 among the above-mentioned algorithms, only ** AD* ** is dynamic. Probably it is best to customize this algorithm.
 
-Slope
-------
+## Slope
+---
 
 
 In order to account the slope during path search, the parent-to-child cost can be changed.
 
-**Plain A* **
+** Plain A* **
 
-```js
+<p class='inline-disqus' data-disqus-identifier="pathfinding-3"></p>
+
+```javascript
 // get the distance between current node and the neighbor
 // and calculate the next g score
 ng = heuristic(x - node.x, y - node.y);
 ```
+<p class='inline-disqus' data-disqus-identifier="pathfinding-4"></p>
 
 ** A* with Slope ** (see **Test it** section)
-```js
+```javascript
 // get the distance between current node and the neighbor
 // and calculate the next g score
 hypotxy = heuristic(x - node.x, y - node.y);
@@ -57,8 +62,6 @@ ng = node.g
 + heuristic(weight * hypotxy, 
     slopeWeight * abs(neighbor.height - node.height));
 ```
-<p class='inline-disqus' data-disqus-identifier="pathfinding-3"></p>
-
 
 ** A* ** and its derivated algorithms are assured to find the optimal solution only if the cost function works properly. I still need to check if this change will break this property. We can naively run the customized ** AD* ** algorithm against the ** dijkstra ** during testing (taking in account the slope for each edge). dijkstra will always work anyway. If ** dijkstra ** gives a different result, we are wrong :)
 
