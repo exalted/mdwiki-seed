@@ -90,5 +90,47 @@ Links and references
 
 [Another good introduction to A* and pathfinding](http://theory.stanford.edu/~amitp/GameProgramming/)
 
+## Glossary
+
+* Static vs Dynamic
+  When dynamic, the algorithm uses past information when the map is updated, in order to reduce the computation time.
+
+* Anytime
+  The algorithm can be run within a certain amount of time, but reducing the quality of the solution. 
+  The error is however bounded.
+
+## Algorithms summary:
 
 
+* ** A* **: 
+  - Simple
+  - Static
+  - Optimal
+
+* ** ARA* ** :  Anytime: Repairing A*
+  - Anytime
+
+[pdf](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB8QFjAA&url=http%3A%2F%2Fmachinelearning.wustl.edu%2Fmlpapers%2Fpaper_files%2FNIPS2003_CN03.pdf&ei=nTYTVKvZJZOh7AbV1YHYCQ&usg=AFQjCNFg_a4-XvVZUGtilbBRjXogugFzeA&sig2=xXOyV_kmanVIx0z9aKqJ9g&bvm=bv.75097201,d.ZGU)
+```bibtex
+@inproceedings{likhachev2003ara,
+  title={ARA*: Anytime A* with provable bounds on sub-optimality},
+  author={Likhachev, Maxim and Gordon, Geoffrey J and Thrun, Sebastian},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={None},
+  year={2003}
+}
+```
+* ** AD* **: Anytime Dynamic A*
+  - Anytime
+  - Dynamic
+
+[pdf](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB0QFjAA&url=http%3A%2F%2Fwww.cs.cmu.edu%2F~ggordon%2Flikhachev-etal.anytime-dstar.pdf&ei=tzYTVOqqDumw7AaWq4HQDw&usg=AFQjCNEV_e2Ro8OIGatgB_oY9GefwOfhXw&sig2=W8R0MYGAUd4hCrTscGjSZQ&bvm=bv.75097201,d.ZGU)
+```bibtex
+@inproceedings{likhachev2005anytime,
+  title={Anytime Dynamic A*: An Anytime, Replanning Algorithm.},
+  author={Likhachev, Maxim and Ferguson, David I and Gordon, Geoffrey J and Stentz, Anthony and Thrun, Sebastian},
+  booktitle={ICAPS},
+  pages={262--271},
+  year={2005}
+}
+```
