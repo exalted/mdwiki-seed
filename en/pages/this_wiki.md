@@ -8,6 +8,19 @@ You can edit or write new pages with any text editor, then submit your changes w
 
 ##Comments
 
+
+### Inline Comments
+Write the comment in a way that is distinguishable from normal wiki content (you can use *** italics *** for instance).
+Remember to sign your comment appending your name/email or your github account link with this gimmick
+
+```javascript
+[!githubuser](username)
+```
+
+warning: this gimmick must still be implemented.
+
+### Discus Comments
+
 <p class='inline-disqus' data-disqus-identifier="this_wiki-1"></p>
 Comments can be written by anyone. In order to add a placeholder for comment insert this line:
 

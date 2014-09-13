@@ -36,6 +36,8 @@ Ros provides two nodes that implement the **global_planner** interface:
 
 among the above-mentioned algorithms, only ** AD* ** is dynamic. Probably it is best to customize this algorithm.
 
+See also [sbpl](sbpl.md) and [spbl_lattice_planner](sbpl_lattice_planner.md)
+
 ## Slope
 ---
 
