@@ -37,6 +37,7 @@
   - - - -
   * # Navigation
   * [Pathfinding](pages/pathfinding.md)
+  * [Pathfinding - *Planning*](pages/pathfinding-planning.md)
   - - - -
   * # Tools
 

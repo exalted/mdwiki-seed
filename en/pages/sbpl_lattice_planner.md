@@ -17,4 +17,3 @@ bool SBPLLatticePlanner::makePlan(const geometry_msgs::PoseStamped& start,
 ```
 is called the class will update the sbpl environment comparing the previous costmap (still stored in the sbpl enviroment) and the new costmap (in the Costmap2DROS instance) for each node at position (x,y).
 Then the sbpl planner is run and the result is published as a [nav_msgs::Path](http://docs.ros.org/api/nav_msgs/html/msg/Path.html)
-

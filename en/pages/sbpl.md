@@ -40,7 +40,7 @@ implementations are manually casted (See the original paper for details).
 ActionsV is a 2D vector char[theta][actionId]
 
 Actions are evaluated from motion primitives. If no motion primites file is provided, then **  EnvironmentNAVXYTHETALATTICE::DeprecatedPrecomputeActions() ** 
-will be called, which will assure the creation of some default actions.
+will be called, which will assure the creation of some default actions (depracted, probably not working).
 
 ---
 
@@ -102,7 +102,11 @@ Both GetPreds and GetSuccs returns a CostV array, which contains the cost of the
 
 UpdateSuccofOverconsState is called when a node has a new cost lower than before (due to underlaying map changes).
 
-# TODO: Slope
+## Slope
+---
+
+The modified algorithm must also consider height data. This can be stored inside the ** EnvNAVXYTHETALATConfig_t ** class,
+just like the internal 2D costmap.
 
 <p class='inline-disqus' data-disqus-identifier="sbpl-slope"></p>
 
@@ -115,7 +119,9 @@ UpdateSuccofOverconsState is called when a node has a new cost lower than before
 ---
 
 ## Related links:
+---
 
+** DA* algorithm: ** 
 [pdf](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB0QFjAA&url=http%3A%2F%2Fwww.cs.cmu.edu%2F~ggordon%2Flikhachev-etal.anytime-dstar.pdf&ei=tzYTVOqqDumw7AaWq4HQDw&usg=AFQjCNEV_e2Ro8OIGatgB_oY9GefwOfhXw&sig2=W8R0MYGAUd4hCrTscGjSZQ&bvm=bv.75097201,d.ZGU)
 ```bibtex
 @inproceedings{likhachev2005anytime,

@@ -1,9 +1,7 @@
 # Pathfinding
 
-[gimmick: math]()
-
-ROS Navigation
--------
+## ROS Navigation
+---
 
 <p class='inline-disqus' data-disqus-identifier="pathfinding-1"></p>
 
@@ -12,18 +10,15 @@ The structure and interfaces of the entire stack are defined in the [nav_core pa
 
 ![Navigation Stack](http://wiki.ros.org/nav_core?action=AttachFile&do=get&target=move_base_interfaces.png)
 
-We need to customize:
+The **Costmap2D** is a class that manages a 2D costmap with one or more **Layer**. Each **Layer** can write a value on the cells of the costmap using the data received from sensors.
+The **Global Planner** is the interface that does the actual pathfinding. It can read the **Costmap2D** and, when requested, it can publish a new path to follow. 
 
-* the **global_planner**
-  in order to evaluate the shortest path, while taking in account the slope of the terrain
-* the **global_costmap** 
-  which will provides the height in each node of the map (2D grid)
+Other classes instead handle the local planning and instruct the actuators. 
 
-Algorithm
--------
+## Algorithms
+---
 
 hint: basically all algorithms are based on ** A* **. A good explanation to ** A* ** and pathfinding in general can be found [here](http://www.policyalmanac.org/games/aStarTutorial.htm). Further links are listed below 
-
 
 <p class='inline-disqus' data-disqus-identifier="pathfinding-2"></p>
 
@@ -32,58 +27,19 @@ Ros provides two nodes that implement the **global_planner** interface:
 1. ** [navfn](http://wiki.ros.org/navfn) **
   which uses **Dijkstra** or ** A* ** 
 2. ** [sbpl](http://wiki.ros.org/sbpl) **
-  which implements several algorithms (but only** ARA* **and** AD* **will work out of the box)
+  which implements already several algorithms (but only** ARA* **and** AD* **will work out of the box)
 
-among the above-mentioned algorithms, only ** AD* ** is dynamic. Probably it is best to customize this algorithm.
+among the above-mentioned algorithms, only ** AD* ** is dynamic. 
 
 See also [sbpl](sbpl.md) and [spbl_lattice_planner](sbpl_lattice_planner.md)
 
 ## Slope
 ---
+Currently, no algorithm in the ROS navigation stack considers the slope of the terrain during path planning.
+The page [Pathfinding - Planning](pathfinding-planning.md) describes a possible solution for this.
 
-
-In order to account the slope during path search, the parent-to-child cost can be changed.
-
-** Plain A* **
-
-<p class='inline-disqus' data-disqus-identifier="pathfinding-3"></p>
-
-```javascript
-// get the distance between current node and the neighbor
-// and calculate the next g score
-ng = heuristic(x - node.x, y - node.y);
-```
-<p class='inline-disqus' data-disqus-identifier="pathfinding-4"></p>
-
-** A* with Slope ** (see **Test it** section)
-```javascript
-// get the distance between current node and the neighbor
-// and calculate the next g score
-hypotxy = heuristic(x - node.x, y - node.y);
-ng = node.g
-+ heuristic(weight * hypotxy, 
-    slopeWeight * abs(neighbor.height - node.height));
-```
-
-** A* ** and its derivated algorithms are assured to find the optimal solution only if the cost function works properly. I still need to check if this change will break this property. We can naively run the customized ** AD* ** algorithm against the ** dijkstra ** during testing (taking in account the slope for each edge). dijkstra will always work anyway. If ** dijkstra ** gives a different result, we are wrong :)
-
-
-Height
------
-
-We need to provide to the algorithm the height for each node. We could write a [costmap_2d](http://wiki.ros.org/costmap_2d) plugin that checks the octree on each update and writes back the height in each node of the costmap. It will work but it does not seem a really clean solution (this way, we do not properly use the costmap). 
-
-Test it
----- 
-
-A first version of the modified algorithm is available at [sebastiano-barrera/PathFinding.js](https://github.com/sebastiano-barrera/PathFinding.js)
-
-![slope-pathfinding](/uploads/slope-pathfinding.png) 
-
-You can [try it online](/extra/simulation/pathfinding/visual/index.html)
-
-Links and references
------
+## Links and references
+---
 [ARA* Paper](http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2003_CN03.pdf) Beyond explaning how ** ARA* ** is made, it also shows how ** A* ** changes with weighted heuristic
 
 ** AD* Paper **  _still not found_. I guess it is just an anytime ** D*  lite **
@@ -93,6 +49,7 @@ Links and references
 [Another good introduction to A* and pathfinding](http://theory.stanford.edu/~amitp/GameProgramming/)
 
 ## Glossary
+---
 
 * Static vs Dynamic
   When dynamic, the algorithm uses past information when the map is updated, in order to reduce the computation time.
@@ -102,7 +59,7 @@ Links and references
   The error is however bounded.
 
 ## Algorithms summary:
-
+---
 
 * ** A* **: 
   - Simple
