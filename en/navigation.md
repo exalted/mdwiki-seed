@@ -51,6 +51,10 @@
 
 [GUI](pages/gui.md)
 
+[Gazebo]()
+
+  * [Models](pages/gazebo_models.md)
+
 [Git]()
 
   * [Git](pages/git.md)
