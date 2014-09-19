@@ -35,3 +35,4 @@ python build.py --symlink='~/.gazebo/models'
 
 ### Rover Amalia
 
+See [Rover Amalia Gazebo Model](gazebo_amalia_rover.md)
