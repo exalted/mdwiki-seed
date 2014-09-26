@@ -8,6 +8,8 @@ In the private parameters inside the code you can choose what kind of inputs you
 Launch with ```rosrun adc adc```
 This node create the service ```/Moving_Status``` that enable the full 6dof motion registration but also more noise and error. And the parameters ```/adc/filtered_imu``` that enable the low pass filter, this may create oscillation in the suspension.
 
+[ADC package](adc_package.md)
+
 
 ### imu_filter_madgwick
 Launch with ```rosrun imu_filter_madgwick imu_filter_node```
@@ -18,5 +20,7 @@ The algorithm used to filter the imu raw data is described [here](http://www.x-i
 
 Both this node is mandatory to execute the suspension_controller_node and in order to visualize the pose of the rover in rviz.
 
-### CAN
+### [CAN](can.md)
+
 The [CAN](http://en.wikipedia.org/wiki/Controller_area_network) interface controls the motors. 
+

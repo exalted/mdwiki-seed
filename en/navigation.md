@@ -21,7 +21,11 @@
 
 [Home](index.md)
 [ROS](pages/ROS.md)
-[Amalia Rover](pages/amalia_rover.md)
+[Amalia Rover]()
+
+  * [Rover](pages/amalia_rover.md)
+  * [Hardware](pages/hardware.md)
+  
 [Subsystems]()
 
   * # IO
@@ -65,6 +69,7 @@
 
   * [Rover first setup](pages/rover_first_setup.md)
   * [RViz](pages/rviz.md)
+  * [Catkin](pages/catkin.md)
   * [Remote ROS connection](pages/remote.md)
   * [Development guidelines](pages/development_guidelines.md)
   * [This Wiki](pages/this_wiki.md)
