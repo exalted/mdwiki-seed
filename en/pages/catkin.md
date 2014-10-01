@@ -2,6 +2,20 @@
 
 [Catkin](http://wiki.ros.org/catkin) is the ROS build system
 
+## Useful reference links:
+
+Package directory layout:
+  - [Common Files and Directories](http://wiki.ros.org/Packages#Common_Files_and_Directories)
+
+Good example of a python package, with unit and integration tests
+  - [osrf/capabilities](https://github.com/osrf/capabilities)
+
+## Unit and Integration Testing Python
+
+Read:
+  [catkin - configure and running unit tests](http://docs.ros.org/hydro/api/catkin/html/howto/format2/index.html#configuring-and-running-unit-tests)
+
+
 ## How it works
 ---
 ```txt

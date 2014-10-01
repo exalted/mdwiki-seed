@@ -70,8 +70,10 @@
   * [Rover first setup](pages/rover_first_setup.md)
   * [RViz](pages/rviz.md)
   * [Catkin](pages/catkin.md)
+  * [Unit Testing](pages/unit_testing.md)
   * [Remote ROS connection](pages/remote.md)
   * [Development guidelines](pages/development_guidelines.md)
+  * [Learning](pages/learning.md)
   * [This Wiki](pages/this_wiki.md)
 
 
