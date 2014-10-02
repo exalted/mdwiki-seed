@@ -11,3 +11,12 @@ These course explain a lot of common techniques used in SLAM and elsewhere:
 
 [SLAM Course - WS13/14](https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_)
 [SLAM Course - WS12/13](https://www.youtube.com/playlist?list=PLgnQpQtFTOGQECnBvZSV61oxTrkPut-nc)
+
+## [Probabilistic Robotics](http://www.probabilistic-robotics.org/)
+
+Official webpage for the book, with slides and images.
+
+## Misc Papers
+
+[A Probabilistic Approach to ToF and Stereo Data Fusion](http://www.dei.unipd.it/~dalmutto/Papers/10_3DPVT.pdf)
+
