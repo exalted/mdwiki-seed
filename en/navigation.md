@@ -1,31 +1,31 @@
 <!--
-  -- Name of your wiki
-  -- Do NOT remove the leading `#` character.
-  -->
+-- Name of your wiki
+-- Do NOT remove the leading `#` character.
+-->
 
 # Team Diana Wiki
 
 
 <!--
-  -- Default theme
-  -- (Read: http://dynalon.github.io/mdwiki/#!customizing.md#Theme_chooser)
-  -->
+-- Default theme
+-- (Read: http://dynalon.github.io/mdwiki/#!customizing.md#Theme_chooser)
+-->
 
 [gimmick:theme](spacelab)
 
 
-<!--
+  <!--
   -- Navigation
   -- (Read: http://dynalon.github.io/mdwiki/#!quickstart.md#Adding_a_navigation)
   -->
 
-[Home](index.md)
-[ROS](pages/ROS.md)
+  [Home](index.md)
+  [ROS](pages/ROS.md)
 [Amalia Rover]()
 
   * [Rover](pages/amalia_rover.md)
   * [Hardware](pages/hardware.md)
-  
+
 [Subsystems]()
 
   * # IO
@@ -58,6 +58,7 @@
 [Gazebo]()
 
   * [Models](pages/gazebo_models.md)
+  * [Amalia Rover](pages/gazebo_amalia_rover.md)
 
 [Git]()
 
@@ -74,48 +75,49 @@
   * [Remote ROS connection](pages/remote.md)
   * [Development guidelines](pages/development_guidelines.md)
   * [Learning](pages/learning.md)
+  * [Status](pages/status.md)
   * [Code Snippets](pages/code_snippets.md)
   * [This Wiki](pages/this_wiki.md)
 
 
-<!-- A more complex navigation example: ----------------------------------------
+  <!-- A more complex navigation example: ----------------------------------------
 
 [Menu Item 1]()
 
   * # SubMenu Heading 1
   * [SubMenu Item 1](pages/subitem1.md)
-  * [SubMenu Item 2](pages/subitem2.md)
+* [SubMenu Item 2](pages/subitem2.md)
   - - - -
   * # SubMenu Heading 2
-  * [SubMenu Item 3](pages/subitem3.md)
+* [SubMenu Item 3](pages/subitem3.md)
   - - - -
   * # SubMenu Heading 3
-  * [SubMenu Item 3](pages/subitem3.md)
+* [SubMenu Item 3](pages/subitem3.md)
 
 [Menu Item 2](pages/item2.md)
 
 [Menu Item 3](pages/item3.md)
 
----------------------------------------------------------------------------- -->
+  ---------------------------------------------------------------------------- -->
 
-<!--
+  <!--
   -- Change the Language
   -- Could be useful when there's more than one language wiki.
   -->
 
-<!--
+  <!--
 [Change the Language]()
 
   * [English (United States)](/en_US/)
   * [English (United Kingdom)](/en_GB/)
-  * [Italian](/it/)
--->
+* [Italian](/it/)
+  -->
 
-<!--
+  <!--
   -- Let the user choose a theme
   -- (Read: http://dynalon.github.io/mdwiki/#!quickstart.md#Adding_a_navigation)
   -->
 
-<!--
+  <!--
 [gimmick:themechooser](Choose theme)
--->
+  -->

@@ -16,6 +16,11 @@ The enabled plugins are:
 - Multicamera
 - Depth Camera
 
+## TODO
+
+- [add suspensions](gazebo_amalia_rover_suspensions.md)
+- add pantilt
+
 ## SDF
 ---
 The sdf file is available [here](https://raw.githubusercontent.com/team-diana/gazebo-models/master/models/rover_amalia/model.sdf) and is ready to be used in Gazebo.

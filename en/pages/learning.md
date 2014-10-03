@@ -14,7 +14,7 @@ These course explain a lot of common techniques used in SLAM and elsewhere:
 
 ## [Probabilistic Robotics](http://www.probabilistic-robotics.org/)
 
-Official webpage for the book, with slides and images.
+Official webpage of the book, with slides and images.
 
 ## Misc Papers
 
