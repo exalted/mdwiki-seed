@@ -23,7 +23,7 @@
 - Add Obstacle detection
   Obstacle can now be overtaken manually, controlling active suspensions and powertrain. Once an obstacle has been detected, the operator must change the angle of each suspension arm in order overtake the obstacle while maintining the rover stable. At the sametime the powertrain must be activated. This process can be done autonomously by the rover using the [DEM](http://en.wikipedia.org/wiki/Digital_elevation_model) provided by the ToF camera. 
 - Add support for suspension stiffness
-  [DEM](http://en.wikipedia.org/wiki/Digital_elevation_model) can also be used to adjust suspensions stiffness in anticipation of the quality of the terrain of the chosen path.
+  [DEM](http://en.wikipedia.org/wiki/Digital_elevation_model) can also be used to adjust suspensions stiffness in anticipation of the quality of the terrain of the chosen path. First, the ToF camera provides the height of the terrain in front of the rover with a very high resolution. This data can be used to evaluate how much the terrain is flat (for instance, this can be done using the standard deviation of each point in a small section of the [pointcloud](http://www.amphioxus.org/sites/default/files/images/content/mtrainier/mtRainierMesh-Matlab-500px.jpg)). Then stiffness can be simply changed sending a message to the suspension controller. The process should be repeated every periodically at some travlled distance.
 - Stereo and ToF camera fusion
   See [Stereo and ToF camera fusion](tof-stereo-integration.md)
 - ToF **only** odometry
