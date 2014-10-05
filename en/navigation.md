@@ -34,6 +34,7 @@
   * # Powertrain
   - - - -
   * # Suspension
+  * [Controller](pages/suspension_controller.md)
   - - - -
   * # Vision
   * [Cameras](pages/cameras.md)
