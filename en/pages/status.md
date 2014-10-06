@@ -30,3 +30,6 @@
   ToF camera can also be an odometry source using ICP algorithm.
   [LOAM](http://wiki.ros.org/loam_back_and_forth)
   [A Visual Odometry Method Based on the SwissRanger SR4000](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB8QFjAA&url=http%3A%2F%2Fwww.dtic.mil%2Fcgi-bin%2FGetTRDoc%3FAD%3DADA536272&ei=OJsuVLeVKYv2O8a0gKAN&usg=AFQjCNHqcpQLWMbagIyiyJivyKWYg8NGrg&sig2=RhI6Re3Oa39PMrAs28C0Xg&bvm=bv.76802529,d.ZWU)
+- Implement a unique language for SDF and URDF files
+  SDF and URDF file are very similar, but they have different specificatons, so, even if converters exist, the user must maintain two different version for the same model. 
+  A good solution would be to write a script in python that generates a model that can be then serialized to an SDF or URDF file. This would also allow conditional expressions, simpler math (cfr. xacro), and fast prototyping.

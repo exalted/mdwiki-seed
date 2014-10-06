@@ -57,7 +57,7 @@ $$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 
 $$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 
-warning: Since the file is parsed by markdown, remember that some character must be escaped with **/**
+warning: Since the file is parsed by markdown, remember that some character must be escaped with **\**
 
 ## Improve MDWiki
 
