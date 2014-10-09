@@ -3,8 +3,6 @@
 ## TODO:
 - Add new ToF camera
   The [SR4500](sr4500.md) Tof Camera must be tested with the existing [ros swissranger_camera driver](http://wiki.ros.org/swissranger_camera) built upon [libmesasr](http://www.mesa-imaging.ch/support/driver-downloads/). If the camera does not work out of the box, or there are some missing features, fork the existing package. 
-- Add new IMU 
-  The [MTi-300](mti-300.md) AHRS must be tested with the existing [ros xsens_driver](http://wiki.ros.org/xsens_driver).
 - Add suspensions to the Gazebo rover model
   Virtualize the suspension system under Gazebo, adding a JointPositionController in ros_control. See [gazebo amalia rover - suspensions](gazebo_amalia_rover_suspensions.md).
 - Add pantilt to Gazebo model
