@@ -60,6 +60,7 @@
 
   * [Models](pages/gazebo_models.md)
   * [Amalia Rover](pages/gazebo_amalia_rover.md)
+  * [Gazebo Plugins](pages/gazebo_ros_pkgs.md#gazebo_plugins)
 
 [Git]()
 

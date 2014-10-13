@@ -1,14 +1,8 @@
 # Status
 
 ## TODO:
-- Add new ToF camera
-  The [SR4500](sr4500.md) Tof Camera must be tested with the existing [ros swissranger_camera driver](http://wiki.ros.org/swissranger_camera) built upon [libmesasr](http://www.mesa-imaging.ch/support/driver-downloads/). If the camera does not work out of the box, or there are some missing features, fork the existing package. 
 - Add suspensions to the Gazebo rover model
   Virtualize the suspension system under Gazebo, adding a JointPositionController in ros_control. See [gazebo amalia rover - suspensions](gazebo_amalia_rover_suspensions.md).
-- Add pantilt to Gazebo model
-  Virtualize the pantilt unit, using two revolute joints for pan and tilt. Add a ros service for command and a topic for status (just like the [flir_pantilt_D46 node](https://github.com/team-diana/vision/tree/master/src/flir_pantilt_d46))
-- Improve physics and aspect of Gazebo model
-  Set the right inertials for each body that composes the rover, possibly improve the graphical aspect of the rover model
 - Add CAN support for engines
   Implement a ROS node that controls the [Solo Whistle](solo-whistle.md) via the [cPCI-7841.md](cpci-7841.md) card.  
 - Add slope-cost to path planning

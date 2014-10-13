@@ -36,3 +36,15 @@ python build.py --symlink='~/.gazebo/models'
 ### Rover Amalia
 
 See [Rover Amalia Gazebo Model](gazebo_amalia_rover.md)
+
+## Using SolidWorks 
+
+In order to use solidworks models in gazebo you have to convert them using blender.
+
+1. Export the model as VRML format (97 seems to work fine)
+2. Import them in blender
+3. Inside blender, export the model to .stl
+4. Open a new file, and import the just exported model (this assures that extra informations are deleted, otherwise gazebo will have strange artifacts)
+5. (optional) Reduce the number of triangles using the [decimate](http://wiki.blender.org/index.php/Doc:2.6/Manual/Modifiers/Generate/Decimate) modifier.
+6. Export the model as .dae (Collada)
+
