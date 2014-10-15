@@ -67,3 +67,18 @@ $$  h\_{min} = min(chassis\_{i}, range\_{front},  range\_{post})  $$
 5. "Osservatore + inseguitore + antisollevamento"
 
 
+## TODO:
+
+### Refactoring
+
+Instead of using switches for each mode, use the [State](http://python-3-patterns-idioms-test.readthedocs.org/en/latest/Fronting.html#state) pattern. Create a unique interface and implement each mode as an implementation of that interface.
+
+Create a class 'Arm' with methods that replace function such as process_arm_X. 
+
+Replace any hardcoded value with a costant. 
+
+Use [numpy](http://www.numpy.org/) where (and if) arrays/lists are used.
+
+Since ROS (and we) will switch to python3 soon, rewrite the code to be [python3 compatible](http://stackoverflow.com/questions/8498823/how-to-write-python-2-x-as-much-compatible-with-python-3-x-as-possible) (but do not spend too much time making sure the code will work on python3, we will review it when needed)
+
+Optionally, write some unit tests (see [unittesting](./unit_testing.md)).

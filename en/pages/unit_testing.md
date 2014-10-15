@@ -6,7 +6,7 @@
 ### ROS package file structure
 
 example file structure:
-(taken from [insert link here](http://insertlinkhere))
+(taken from [ros_status_cli](https://github.com/team-diana/ros_status_cli))
 
 ```bash
 src/ros_status_cli
@@ -115,3 +115,7 @@ if __name__ == '__main__':
     rospy.init_node(TEST_NAME, anonymous=True)
     rostest.unitrun('ros_status_test', TEST_NAME, Test)
 ```
+
+## C++
+
+*TODO: fill me*
