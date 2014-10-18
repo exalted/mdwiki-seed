@@ -13,13 +13,17 @@ The rover is defined with [xacro](wiki.ros.org/xacro) and [sdf 1.5](http://osrf-
 The enabled plugins are:
 
 - Skid Steer
+  virtualizes all the powertrain.
 - Multicamera
+  virtualizes the stereo cameras.
 - Depth Camera
+  virtualizes the ToF camera.
+- Joint Commander
+  virtualizes the pan-tilt.
 
 ## TODO
 
 - [add suspensions](gazebo_amalia_rover_suspensions.md)
-- add pantilt
 
 ## SDF
 ---
