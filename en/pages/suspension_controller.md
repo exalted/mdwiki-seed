@@ -70,6 +70,7 @@ $$  h\_{min} = min(chassis\_{i}, range\_{front},  range\_{post})  $$
 ## TODO:
 
 ### Refactoring
+<sub>WIP - [Tamer](https://github.com/tamersaadeh) - 2014-10-14</sub>
 
 Instead of using switches for each mode, use the [State](http://python-3-patterns-idioms-test.readthedocs.org/en/latest/Fronting.html#state) pattern. Create a unique interface and implement each mode as an implementation of that interface.
 
