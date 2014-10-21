@@ -41,4 +41,3 @@ http://support.robotis.com/en/product/auxdevice/interface/usb2dxl_manual.htm
 ### [Solo Whistle](solo-whistle.md)
 ![Solo Whistle](http://www.elmomc.com/products/images-1/Solo-Whistle-01-b.jpg)
 
-

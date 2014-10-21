@@ -25,6 +25,18 @@ float64 load        # current load
 bool is_moving      # is joint currently in motion
 ```
 
+## Services
+```python
+self.speed_service = rospy.Service(self.controller_namespace + '/set_speed', SetSpeed, self.process_set_speed)
+self.torque_service = rospy.Service(self.controller_namespace + '/torque_enable', TorqueEnable, self.process_torque_enable)
+self.compliance_slope_service = rospy.Service(self.controller_namespace + '/set_compliance_slope', SetComplianceSlope, self.process_set_compliance_slope)
+self.compliance_marigin_service = rospy.Service(self.controller_namespace + '/set_compliance_margin', SetComplianceMargin, self.process_set_compliance_margin)
+self.compliance_punch_service = rospy.Service(self.controller_namespace + '/set_compliance_punch', SetCompliancePunch, self.process_set_compliance_punch)
+self.torque_limit_service = rospy.Service(self.controller_namespace + '/set_torque_limit', SetTorqueLimit, self.process_set_torque_limit)
+self.torque_service = rospy.Service(self.controller_namespace + '/set_torque', SetTorque, self.process_set_torque)
+self.torque_service = rospy.Service(self.controller_namespace + '/set_threshold', SetThreshold, self.process_set_threshold)
+```
+
 ##  Messages
 
 ```python
@@ -73,4 +85,14 @@ self.joint_state_out.effort.append(self.arm_state.load)
 self.joint_state_out.header.stamp = rospy.Time.now()
 self.joint_state_out.name.append(self.arm_state.name)
 self.joint_state_out.name.append(self.arm_state.name)
+```
+
+## Subscribers:
+
+```python
+self.command_sub = rospy.Subscriber(self.controller_namespace + '/command', Float64, self.process_command)
+self.command_arm_sub = rospy.Subscriber(self.controller_namespace + '/arm/command', Float64, self.process_arm_command)
+self.command_step_sub = rospy.Subscriber(self.controller_namespace + '/vel_tor/command', Float64, self.process_step_command)
+self.motor_states_sub = rospy.Subscriber('motor_states/%s' % self.port_namespace, MotorStateList, self.process_motor_states)
+self.arm_states_sub = rospy.Subscriber('/ADC/suspension', sosp_Adc, self.process_arm_states)
 ```

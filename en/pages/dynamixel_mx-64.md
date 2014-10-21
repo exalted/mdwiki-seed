@@ -4,6 +4,7 @@
 
 ## Related nodes
 
+[joint_controller](dynamixel_joint_controller.md)
 [dynamixel_motor](dynamixel_motor_repository.md)
 
 ## Links

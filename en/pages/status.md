@@ -1,8 +1,6 @@
 # Status
 
 ## TODO:
-- Add suspensions to the Gazebo rover model
-  Virtualize the suspension system under Gazebo, adding a JointPositionController in ros_control. See [gazebo amalia rover - suspensions](gazebo_amalia_rover_suspensions.md).
 - Add CAN support for engines
   Implement a ROS node that controls the [Solo Whistle](solo-whistle.md) via the [cPCI-7841.md](cpci-7841.md) card.  
 - Add slope-cost to path planning

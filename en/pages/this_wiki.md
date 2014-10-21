@@ -59,6 +59,12 @@ $$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 
 warning: Since the file is parsed by markdown, remember that some character must be escaped with **\**
 
+# Change page name
+
+use the **move-page.sh** script inside the *scripts* directory, in the root of the wiki.
+
+The script will also update the internal links.
+
 ## Improve MDWiki
 
 If you are a javascript programmer, you can improve mdwiki resolving these issues:

@@ -1,6 +1,6 @@
 # Amalia Rover Gazebo Model
 
-![Amalia Rover with visible joints](/uploads/amalia_rover_gazebo_model.png)
+![Amalia Rover Gazebo Model](/uploads/amalia_rover_gazebo_model.png)
 
 ## Components
 ---
@@ -18,16 +18,19 @@ The enabled plugins are:
   virtualizes the stereo cameras.
 - Depth Camera
   virtualizes the ToF camera.
-- Joint Commander
+- [Joint Commander](joint_commander_plugin.md)
   virtualizes the pan-tilt.
-
-## TODO
-
-- [add suspensions](gazebo_amalia_rover_suspensions.md)
+- [Dynamixel Motor Plugin](gazebo_amalia_rover_suspensions.md)
+  virtualizes the active suspensions system.
 
 ## SDF
 ---
 The sdf file is available [here](https://raw.githubusercontent.com/team-diana/gazebo-models/master/models/rover_amalia/model.sdf) and is ready to be used in Gazebo.
+
+![Amalia Rover gazebo model with joints](/uploads/amalia_rover_gazebo_model_joints.png)
+
+*the sdf model with its joints*
+
 
 ## URDF 
 The urdf is available [here](https://raw.githubusercontent.com/team-diana/gazebo-models/master/urdf/rover_amalia/model.xml)

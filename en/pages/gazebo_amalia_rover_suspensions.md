@@ -1,15 +1,50 @@
-# Gazebo Amalia Rover Suspensions - Planning
+# gazebo_ros_dynamixel_motor_plugin [package]
 
-Using [ros control](http://gazebosim.org/tutorials/?tut=ros_control) properly, it is possible to fully isolate sensors, actuators and PID controllers.
+[team-diana/gazebo_ros_dynamixel_motor_plugin](https://github.com/team-diana/gazebo_ros_dynamixel_motor_plugin)
 
-This allows easier testing, hot code swapping for controllers and virtualization under Gazebo.
+![virtual test bench](/uploads/amalia_rover_leg_test_bench.png)
 
-![ros control](https://bitbucket.org/osrf/gazebo_tutorials/raw/default/ros_control/Gazebo_ros_transmission.png)
+*a single leg, controlled by the plugin*
 
-First,  rangefinders and [imu](http://answers.ros.org/question/12430/modelling-sensorsimu-in-gazebo/) must be added in gazebo and made available as ros interfaces for the control manager.
-Then a PID controller can be written as a plugin for ControlManager.
+This Gazebo plugins virtualizes a [dynamixel motor](dynamixel_mx-64.md).
 
-## Links
+## Messages and Services
+
+### Subscribes:
+```bash
+*/command
+*/arm/command
+*/command
+```
+### Publishes:
+```bash
+*/state
+```
+
+### Provides services:
+```bash
+*/set_speed
+*/set_torque_limit
+*/torque_enable
+```
+
+## Example configuration
+
+```xml
+<plugin filename="libgazebo_ros_dynamixel_motor.so" name="dynamixel_motor">
+  <joint>test_bench_leg</joint>
+  <robotNamespace>robot_name</robotNamespace>
+  <base_topic_name>my_leg</base_topic_name>
+  <default_pos>1.2</default_pos>
+  <default_torque_limit>100</default_torque_limit>
+</plugin>
+```
+
+This will make both topics and services to have a **/robot_name/my_leg/** prefix.
+
+The starting position will be at 1.2 radians.
+
 ---
 
-[Gazebo - ROS Control](http://gazebosim.org/tutorials/?tut=ros_control)
+## TODO:
+Evaluate if all /arm/ related topic should be removed.

@@ -53,7 +53,7 @@ The [CAN](http://en.wikipedia.org/wiki/Controller_area_network) interface contro
   - get_voltage: 
     gets the current power source voltage in Volt
 
-** [joint_controller](joint_controller.md) and joint_position_controller **
+** [joint_controller](dynamixel_joint_controller.md) and joint_position_controller **
 
 **methods:**
  - process_command: 

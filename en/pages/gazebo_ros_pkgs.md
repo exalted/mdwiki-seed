@@ -3,41 +3,10 @@
 
 ## gazebo_plugins
 
-### joint_commander
-
-The joint commander plugin allows to command one or more joint via ROS **messages**.
-
-This is the syntax for adding the plugin:
-
-```xml
-<model>
-  <!-- ... -->
-  <plugin filename="libgazebo_ros_joint_commander.so" name="joint_commander">
-    <robotNamespace>test</robotNamespace>
-    <jointSet1>joint_set_1</jointSet1>
-    <jointSet1Joint1>first_revolute_joint_name</jointSet1Joint1>
-    <jointSet1Joint1>second_revolute_joint_name</jointSet1Joint1>
-    <jointSet2>joint_set_2</jointSet1>
-    <jointSet2Joint1>another_joint_name</jointSet1Joint1>
-  </plugin> 
-</model>
-```
-The previous definition will create two [**sensor_msgs/JointState**](http://docs.ros.org/api/sensor_msgs/html/msg/JointState.html) topics:
-  - joint_set_1
-    with two DoF
-  - joint_set_2
-    with only one DoF
-
-It is possible to add any number of joint. 
-
-Each joint set must follow the *jointSetX* and *jointSetXJointY* sintax.
-
-TODO:
-  - Add velocity support
-
-### suspension_actuator
-
-  - not implemented yet
+- [Joint Commander](joint_commander_plugin.md)
+  Configurable plugin that allow to control one or more joint via ros messages.
+- [Dynamixel Motor Plugin](gazebo_amalia_rover_suspensions.md)
+  Virtualize a dynamixel motor, such as [Dynamixel MX-64](dynamixel_mx-64.md)
 
 ## use gazebo plugins
 
