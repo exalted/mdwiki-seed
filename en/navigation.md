@@ -78,9 +78,13 @@
   * [Remote ROS connection](pages/remote.md)
   * [Development guidelines](pages/development_guidelines.md)
   * [Learning](pages/learning.md)
-  * [Status](pages/status.md)
   * [Code Snippets](pages/code_snippets.md)
   * [This Wiki](pages/this_wiki.md)
+
+[Project]()
+
+  * [Status](pages/status.md)
+  * [Roadmap](pages/roadmap.md)
 
 
   <!-- A more complex navigation example: ----------------------------------------
