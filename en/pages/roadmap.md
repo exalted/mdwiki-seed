@@ -1,13 +1,13 @@
 # Roadmap
 
--   Simulation (Gazebo)
+-   Simulation (Gazebo) [ completion expected on 15/11 ]
     -   Real physical data from CAD (mass, moment of inertia,  ecc&#x2026;)
     -   Procedural terrain generation
     -   IMU
     -   ToF (parameters)
     -   Stereo (parameters)
     -   Suspensions (arm frame vs motor frame fix)
--   Vision 
+-   Vision [ completion expected on 30/11 ]
     -   Setup stereo-cameras and do calibration
 -   Mapping
     -   Form pipeline: sensors, tf, octomap, path finding, motion planning
