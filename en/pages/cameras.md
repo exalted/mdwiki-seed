@@ -4,6 +4,8 @@ Warning:
 ALWAYS remember to check the CPU temperature while dealing with the cameras. Image processing is intensive and the ventilation is not optimal. 
 Open a terminal, and after logging in with ssh, check the temperatures with the ```watch sensors``` command
 
+See also [stereo_vision](stereo_vision.md)
+
 ##Camera Node
 The camera node is inside */home/diana/catkin_ws/src/vision/src/pgr_camera* and [here](https://github.com/team-diana/ros.pgr_camera) on github.
 
