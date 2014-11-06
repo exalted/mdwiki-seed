@@ -15,6 +15,10 @@ The parameters are:
 --sync-serials [list of camera serial number separated by space] 
 ```
 
+## Connection
+
+See [Cameras - Connection](cameras_connection.md)
+
 **Dynamic reconfigure**
 ```c++
 /*
