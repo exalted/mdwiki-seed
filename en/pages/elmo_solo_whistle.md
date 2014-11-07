@@ -4,7 +4,7 @@
 
 ![Solo Whistle](http://www.elmomc.com/members/NetHelp/ImagesExt/image811_0.jpg)
 
-See also [Learning - Network Protocols - CAN](http://0.0.0.0:8080/en/#!pages/network_protocols_learning.md#CAN)
+See also [Learning - Network Protocols - CAN](network_protocols_learning.md#CAN)
 
 
 ## Links
