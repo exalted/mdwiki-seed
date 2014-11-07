@@ -24,6 +24,9 @@
 
 http://support.robotis.com/en/product/auxdevice/interface/usb2dxl_manual.htm
 
+### [Elmo Solo Whistle](elmo_solo_whistle.md)
+![Solo Whistle](http://www.elmomc.com/members/NetHelp/ImagesExt/image811_0.jpg)
+
 ## Sensors
 ---
 
