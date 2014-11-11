@@ -2,11 +2,61 @@
 
 See also [cameras](cameras.md)
 
+## Run both cameras with calibration files:
+
+In the same directory of the executable, have these files:
+
+```bash
+intrinsics13029237.ini  
+intrinsics13062807.ini  
+stereoOnly.launch
+```
+Get the content of the intrinsics file from the [cameras](cameras.md) page.
+
+The content of stereoOnly.launch is
+
+```xml
+<launch>
+  <param name="ROS_NAMESPACE" value="stereo" />
+  <node name="camera_node" pkg="pgr_camera" type="pgr_camera_node" output="screen" cwd="node" args="--serials 13062807 13029237">
+    <remap from="/camera13062807/image_raw" to="/stereo/left/image_raw"/>
+    <remap from="/camera13062807/camera_info" to="/stereo/left/camera_info"/>
+    <remap from="/camera13029237/image_raw" to="/stereo/right/image_raw"/>
+    <remap from="/camera13029237/camera_info" to="/stereo/right/camera_info"/>
+  </node>
+</launch>
+```
+
+and launch the launch file
+
+```bash
+roslaunch stereoOnly.launch
+```
+
+This launch file will run both cameras, remap the topic in a suitable way compatible with stereo_image_proc
+
+Make sure that, during the initialization phase, the intrinsics file are loaded (see the initial output of the previous command)
+
+## stereo_image_proc
+
+Run stereo_image_proc:
+
+```bash
+ROS_NAMESPACE=stereo rosrun stereo_image_proc stereo_image_proc
+```
+This command does not output anything, but new topics (such as /stereo/right/image_rect) are published.
+
+jkkj
+
 ## Parameters
 
 [Choosing Good Stereo Parameters](http://wiki.ros.org/stereo_image_proc/Tutorials/ChoosingGoodStereoParameters)
 
+
 ## Calibration
+
+At the top, the unrectified camera stereo image, at the bottom the rectified one:
+![unrectified-vs-rectified](/uploads/uncalibrated-vs-calibrated.png)
 
 [calibration procedure tutorial](http://wiki.ros.org/camera_calibration/Tutorials/StereoCalibration)
 
