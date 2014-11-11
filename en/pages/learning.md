@@ -1,27 +1,16 @@
 # Learning
 
-## [Cyrill Stachniss](https://www.youtube.com/channel/UCi1TC2fLRvgBQNe-T4dp8Eg) - SLAM Course 
----
-
-These course explain a lot of common techniques used in SLAM and elsewhere:
-- Bayes filter, Kalman Filter, EKF, UKF, EIF, SEIF
-- Particle Filter
-- Scan-Matching
-- Least Squares SLAM
-
-[SLAM Course - WS13/14](https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_)
-[SLAM Course - WS12/13](https://www.youtube.com/playlist?list=PLgnQpQtFTOGQECnBvZSV61oxTrkPut-nc)
-
-## [Probabilistic Robotics](http://www.probabilistic-robotics.org/)
-
-Official webpage of the book, with slides and images.
-
-## Misc Papers
-
-[A Probabilistic Approach to ToF and Stereo Data Fusion](http://www.dei.unipd.it/~dalmutto/Papers/10_3DPVT.pdf)
-
 ## C++ 
- See [C++](c++.md)
+See [C++](c++.md)
 
 ## Python
- See [python](python.md)
+See [python](python.md)
+
+## Robotics
+See [Learning - Robotics](robotics_learning.md)
+
+## Computer Vision
+See [Learning - Computer Vision](computer_vision_learning.md)
+
+## Network Protocols
+See [Learning - Network Protocols](network_protocols_learning.md)

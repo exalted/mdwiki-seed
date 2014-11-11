@@ -22,6 +22,25 @@ The worlds submodule should also be linked inside the ~/.gazebo directory:
 ln -s  ~//path/to/git/repository/worlds ~/.gazebo/worlds
 ```
 
+## Team Diana Plugins
+New plugins were added to the standard ros-gazebo plugins. These plugins are available in these repository:
+
+ - [team-diana/gazebo_ros_dynamixel_motor_plugin](https://github.com/team-diana/gazebo_ros_dynamixel_motor_plugin)
+ - [team-diana/gazebo_ros_pkgs](https://github.com/team-diana/gazebo_ros_pkgs)
+
+tip: the libraries of the repositories listed above should be installed and available in the same plugin directory used by gazebo.
+
+## Textures
+
+Currently, it seems that gazebo cannot load texture outside of the resource directory. This can cause some texture to not appear, even without error message.
+Until this problem will be solved, all the used textures must be copied inside the resource directory. A script inside the 
+[team-diana/gazebo-assets](https://github.com/team-diana/gazebo-assets) repository will do this:
+
+```bash
+cd textures
+bash install.sh
+```
+
 ## Tips
 
 - Use always the **ODE** physics engine. 

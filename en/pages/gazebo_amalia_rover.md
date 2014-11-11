@@ -23,6 +23,8 @@ The enabled plugins are:
 - [Dynamixel Motor Plugin](gazebo_amalia_rover_suspensions.md)
   virtualizes the active suspensions system.
 
+Some plugins are not avilable in the standard packages, and should be manually installed. See [Gazebo - Team Diana Plugins](gazebo.md#Team_Diana_Plugins)
+
 ## SDF
 ---
 The sdf file is available [here](https://raw.githubusercontent.com/team-diana/gazebo-models/master/models/rover_amalia/model.sdf) and is ready to be used in Gazebo.

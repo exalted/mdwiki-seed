@@ -24,6 +24,9 @@
 
 http://support.robotis.com/en/product/auxdevice/interface/usb2dxl_manual.htm
 
+### [Elmo Solo Whistle](elmo_solo_whistle.md)
+![Solo Whistle](http://www.elmomc.com/members/NetHelp/ImagesExt/image811_0.jpg)
+
 ## Sensors
 ---
 
@@ -34,6 +37,14 @@ http://support.robotis.com/en/product/auxdevice/interface/usb2dxl_manual.htm
 ### [MTi-300](mti-300.md)
 
 ![MTi-300](http://shop.xsens.com/SiteFiles/temp/92dec65752ff90fc867f76c51bb4b817-800x800.png)
+
+### [1.3 MP **Color** Blackfly PoE GigE Camera](blackfly_color_poe_gige_hardware.md)
+
+![color GigE Camera](http://www.ptgreystore.com/content/images/thumbs/0000781_blackfly-13-mp-color-gige-poe-ev76c560.jpeg)
+
+### [1.3 MP **B&W** Blackfly PoE GigE Camera](blackfly_bw_poe_gige_hardware.md)
+
+![b&w GigE Camera](http://www.ptgreystore.com/content/images/thumbs/0000780_blackfly-13-mp-color-gige-poe-ev76c560.jpeg)
 
 ## Powertrain
 ---

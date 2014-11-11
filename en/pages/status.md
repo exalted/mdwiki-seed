@@ -18,6 +18,7 @@
   See [Stereo and ToF camera fusion](tof-stereo-integration.md)
 - ToF **only** odometry
   ToF camera can also be an odometry source (using ICP algorithm for instance).
+  [depth_camera_only_slam](depth_camera_only_slam.md)
   [LOAM](http://wiki.ros.org/loam_back_and_forth)
   [A Visual Odometry Method Based on the SwissRanger SR4000](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB8QFjAA&url=http%3A%2F%2Fwww.dtic.mil%2Fcgi-bin%2FGetTRDoc%3FAD%3DADA536272&ei=OJsuVLeVKYv2O8a0gKAN&usg=AFQjCNHqcpQLWMbagIyiyJivyKWYg8NGrg&sig2=RhI6Re3Oa39PMrAs28C0Xg&bvm=bv.76802529,d.ZWU)
 - Implement a unique language for SDF and URDF files [python only]

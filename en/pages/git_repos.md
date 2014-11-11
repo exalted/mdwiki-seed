@@ -47,7 +47,7 @@ python script that emulates the rover actuators.
 Handles the suspensions actuators.
 
 ## gazebo_ros_dynamixel_motor_plugin
-[team-diana/gazebo_ros_dynamixel_motor_plugin](https://github.com/team-diana/https://github.com/team-diana/gazebo_ros_dynamixel_motor_plugin)
+[team-diana/gazebo_ros_dynamixel_motor_plugin](https://github.com/team-diana/gazebo_ros_dynamixel_motor_plugin)
 Virtualizes the suspensions actuators inside Gazebo.
 
 ## team_diana_lib
@@ -71,7 +71,8 @@ GUI for user-friendly rover control
 Node for the sr4500 ToF camera.
 
 ## gazebo_ros_pkgs
-[team-diana/gazebo_ros_pkgs](gazebo_ros_pkgs.md)
+[team-diana/gazebo_ros_pkgs](https://github.com/team-diana/gazebo_ros_pkgs)
+[gazebo_ros_pkgs](gazebo_ros_pkgs.md)
 fork of the original ros pkg with more plugins.
 
 ## gazebo-models
