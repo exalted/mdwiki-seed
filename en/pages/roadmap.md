@@ -1,7 +1,7 @@
 # Roadmap
 
 -   Simulation (Gazebo) [ completion expected on 15/11 ]
-    -   Real physical data from CAD (mass, moment of inertia,  ecc&#x2026;)
+    -   Real physics data from CAD (mass, moment of inertia,  ecc&#x2026;)
     -   Procedural terrain generation
     -   IMU
     -   ToF (parameters)
