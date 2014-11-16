@@ -1,5 +1,9 @@
 # Depth Camera Only SLAM
 
+See also: [ICP](icp.md)
+
+[PCL - Registration API](http://pointclouds.org/documentation/tutorials/registration_api.php#registration-api)
+
 ## Links
 
 [point cloud slam without rgb information - ROS Answers](http://answers.ros.org/question/36795/point-cloud-slam-without-rgb-information/)
@@ -11,6 +15,11 @@
 [pdf](http://www.researchgate.net/publication/228662715_3D_pose_estimation_and_mapping_with_time-of-flight_cameras/file/79e4150580485b8a2b.pdf)
 
 This papers list some methods on how to perform SLAM using only depth and intensity data coming from a Mesa SR3000 ToF.
+
+**Notes:**
+The referred **KLT** method is both [KLT tracking](http://en.wikipedia.org/wiki/Kanade%E2%80%93Lucas%E2%80%93Tomasi_feature_tracker) itself, and the feature 
+detection algorithm technique described in [*Shi and C. Tomasi. Good Features to Track*](ovement.nyu.edu/mocap11f/papers/lec03_OpenCV_FeaturesFinding.pdf) 
+and available in OpenCV as [goodFeaturesToTrack](http://docs.opencv.org/modules/imgproc/doc/feature_detection.html#goodfeaturestotrack).
 
 ```bibtex
 @inproceedings{may20083d,
@@ -40,6 +49,23 @@ This papers list some methods on how to perform SLAM using only depth and intens
   organization={IEEE}
 }
 ```
+---
+
+**A visual odometry method based on the SwissRanger SR4000**
+
+Uses **SIFT**, **SVD** and **RANSAC**.
+
+[pdf](http://www.dtic.mil/dtic/tr/fulltext/u2/a536272.pdf)
+
+@inproceedings{ye2010visual,
+  title={A visual odometry method based on the SwissRanger SR4000},
+  author={Ye, Cang and Bruch, Michael},
+  booktitle={SPIE Defense, Security, and Sensing},
+  pages={76921I--76921I},
+  year={2010},
+  organization={International Society for Optics and Photonics}
+}
+
 ---
 
 ** Selecting good corners for structure and motion recovery using a time-of-flight camera **

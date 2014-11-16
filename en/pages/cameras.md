@@ -4,17 +4,15 @@ Warning:
 ALWAYS remember to check the CPU temperature while dealing with the cameras. Image processing is intensive and the ventilation is not optimal. 
 Open a terminal, and after logging in with ssh, check the temperatures with the ```watch sensors``` command
 
-See also [stereo_vision](stereo_vision.md)
+See also [stereo_vision](stereo_vision.md) and [stereo_vision_slam](stereo_vision_slam.md)
 
 ##Camera Node
-The camera node is inside */home/diana/catkin_ws/src/vision/src/pgr_camera* and [here](https://github.com/team-diana/ros.pgr_camera) on github.
+The camera node is avilable at [team-diana/pgr_camera](https://github.com/team-diana/pgr_camera)
 
 The parameters are:
 ```bash
 --serials [list of camera serial number separated by space] 
---sync-serials [list of camera serial number separated by space] 
 ```
-
 
 ## Hardware
 
@@ -30,47 +28,58 @@ The serial numbers of the cameras are:
 
 See [Cameras - Connection](cameras_connection.md)
 
-**Dynamic reconfigure**
-```c++
-/*
-      * If Shutter and Gain are both set to auto, then auto exposure
-      * will tune each one to maintain a constant exposure at each pixel.
-      *
-      * If only one of Shutter/Gain is set to auto, then that value
-      * will be tuned to enforce the constant exposure value at each
-      * pixel, while the other value is not changed.
-      *
-      * If both Shutter and Gain are set to manual, then auto exposure
-      * has no effect.
-      *
-      */
-```
-
-
 ##Commands
 
 Start the cameras:
-First enter in the directory where launch files are contained (or just source the setup.bash file in WORKSPACE/devel):
-```bash 
-cd ~/catkin_ws/src/vision/src/pgr_camera/launch 
+
+In order to run the two cameras for stereo visions, use this launch file
+
+*stereo_only.launch*
+
+```xml
+<launch>
+  <param name="ROS_NAMESPACE" value="stereo" />
+  <node name="camera_node" pkg="pgr_camera" type="pgr_camera_node" output="screen" cwd="node" args="--serials 13062807 13029237">
+    <remap from="/camera13062807/image_raw" to="/stereo/left/image_raw"/>
+    <remap from="/camera13062807/camera_info" to="/stereo/left/camera_info"/>
+    <remap from="/camera13029237/image_raw" to="/stereo/right/image_raw"/>
+    <remap from="/camera13029237/camera_info" to="/stereo/right/camera_info"/>
+  </node>
+</launch>
 ```
-Then launch one of the launch files:
 
 ```bash
-#Launch all the camera, with left and right synchronized
-roslaunch all.launch
-#Launch all the camera, with left and right not synchronized
-roslaunch allWithoutSync.launch
-#Launch only the stereo cameras, with left and right synchronized
-roslaunch stereoOnly.launch
-#Launch only the stereo camera, with left and right not synchronized
-roslaunch stereoOnlyWithoutSync.launch
+roslaunch stereo_only.launch
 ```
+
+or run the all_cameras.launch file in order to make all the cameras run:
+
+*all_cameras.launch*
+
+```xml
+<launch>
+  <param name="ROS_NAMESPACE" value="stereo" />
+  <node name="camera_node" pkg="pgr_camera" type="pgr_camera_node" output="screen" cwd="node" args="--serials 13062807 13029237 13201007">
+    <remap from="/camera13062807/image_raw" to="/stereo/left/image_raw"/>
+    <remap from="/camera13062807/camera_info" to="/stereo/left/camera_info"/>
+    <remap from="/camera13029237/image_raw" to="/stereo/right/image_raw"/>
+    <remap from="/camera13029237/camera_info" to="/stereo/right/camera_info"/>
+  </node>
+</launch>
+```
+
+```bash
+roslaunch all_cameras.launch
+```
+
+Then run the [stereo_image_proc](http://wiki.ros.org/stereo_image_proc) for disparity and point cloud.
 
 ```bash
 Run the processor for Point Clound and other PCL processing:
 ROS_NAMESPACE=stereo rosrun stereo_image_proc stereo_image_proc
 ```
+
+Show the disparity image:
 
 ```bash
 Show disparity:
@@ -222,7 +231,6 @@ projection
 
 Intrinsics file (*.ini) are used by image processors in order to know the camera intrinsics values..
 They are obtained via the calibration process.
-Currently the ini file are inside the */home/diana/catkin_ws/devel/lib/pgr_camera* directory. 
 Each file is named in this format: *intrinsicsCAMERA_SERIAL_NUMBER.ini* e.g. : intrinsics13201007.ini
 
 ## FlyCapture SDK

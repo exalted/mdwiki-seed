@@ -28,3 +28,4 @@
   Keyboard, generic joints, limit must be added
 - Improve [ros_status_cli](https://github.com/team-diana/ros_status_cli) [python only]
   Add key for cleaning dead nodes, add ERROR logs count
+- NEW: do color camera calibration, get left-camera--color-camera transform.

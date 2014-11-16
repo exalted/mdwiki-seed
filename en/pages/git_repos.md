@@ -34,6 +34,10 @@ This repository is going to be dismissed.
 This repository contains motor-related packages.
 This repository is going to be dismissed.
 
+## pgr_camera
+[team-diana/pgr_camera](https://github.com/team-diana/pgr_camera)
+This repository contains the node that publishes the images retrieved from the [blackfly cameras](blackfly_bw_poe_gige_hardware.md).
+
 ## suspension_controller
 [team-diana/suspension_controller](https://github.com/team-diana/suspension-controller)
 Handles the supension system in order to maintain the asset of the rover, sending commands to the actuators.

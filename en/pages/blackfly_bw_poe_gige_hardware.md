@@ -2,6 +2,8 @@
 
 We use two B&W cameras for stereo-vision.
 
+See also [cameras](cameras.md)
+
 --- 
 
 ## Characteristics

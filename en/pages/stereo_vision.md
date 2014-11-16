@@ -1,6 +1,6 @@
 # Stereo Vision
 
-See also [cameras](cameras.md)
+See also [cameras](cameras.md) and [stereo_vision_slam](stereo_vision_slam.md)
 
 ## Run both cameras with calibration files:
 
@@ -13,7 +13,7 @@ stereoOnly.launch
 ```
 Get the content of the intrinsics file from the [cameras](cameras.md) page.
 
-The content of stereoOnly.launch is
+The content of stereo_only.launch is
 
 ```xml
 <launch>
@@ -30,7 +30,7 @@ The content of stereoOnly.launch is
 and launch the launch file
 
 ```bash
-roslaunch stereoOnly.launch
+roslaunch stereo_only.launch
 ```
 
 This launch file will run both cameras, remap the topic in a suitable way compatible with stereo_image_proc
@@ -63,6 +63,10 @@ At the top, the unrectified camera stereo image, at the bottom the rectified one
 [camera calibration and 3d reconstruction](http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html)
 
 * For an in-depth discussion of the block matching algorithm, see pages 438-444 of Learning OpenCV. *
+
+## SLAM
+
+See [stereo_vision_slam](stereo_vision_slam.md)
 
 ## Related Papers
 
