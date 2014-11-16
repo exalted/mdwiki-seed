@@ -29,3 +29,4 @@
 - Improve [ros_status_cli](https://github.com/team-diana/ros_status_cli) [python only]
   Add key for cleaning dead nodes, add ERROR logs count
 - NEW: do color camera calibration, get left-camera--color-camera transform.
+- NEW: create a tool that does camera-tof calibration, get left-camera-tof transform.
