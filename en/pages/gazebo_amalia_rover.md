@@ -2,6 +2,8 @@
 
 ![Amalia Rover Gazebo Model](/uploads/amalia_rover_gazebo_model.png)
 
+In order to control the vehicle more easily, use the [generic_input_controller](generic_input_controller.md) 
+
 ## Components
 ---
 The rover is defined with [xacro](wiki.ros.org/xacro) and [sdf 1.5](http://osrf-distributions.s3.amazonaws.com/sdformat/api/1.5.html).

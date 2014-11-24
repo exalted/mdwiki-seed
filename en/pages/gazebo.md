@@ -2,6 +2,10 @@
 
 [Gazebo](http://gazebosim.org/) is a robot simulation software, built upon [ogre](http://www.ogre3d.org/) and integrated with [ROS](ROS.md).
 
+See also [ODE physics engine](ode-physics-engine.md)
+
+In order to control the vehicle more easily, use the [generic_input_controller](generic_input_controller.md) 
+
 ## How To
 
 All Team DIANA resources for Gazebo are available on [team-diana/gazebo-assets](https://github.com/team-diana/gazebo-assets)
@@ -17,6 +21,8 @@ This repository has two submodules:
 The models can be used creating a symlink inside the ~/.gazebo directory. This is automatically done using a script, see [gazebo models](./gazebo_models.md) for details.
 
 The worlds submodule should also be linked inside the ~/.gazebo directory:
+
+See also [Gazebo - Worlds](gazebo_worlds.md)
 
 ```bash
 ln -s  ~//path/to/git/repository/worlds ~/.gazebo/worlds

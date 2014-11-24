@@ -269,3 +269,5 @@ http://fasterdata.es.net/host-tuning/linux/
 http://stackoverflow.com/questions/2090850/specifying-udp-receive-buffer-size-at-runtime-in-linux
 http://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php
 http://sd.wareonearth.com/~phil/jumbo.html
+
+## New Notes (18/11/14)
