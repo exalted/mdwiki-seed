@@ -20,9 +20,7 @@ JP1 enables the terminal resistor for port0 and JP2 enables the terminal resisto
 
 ### Elmo solo whistle
 
-The [Elmo solo whistle] drive 
-
-
+The [Elmo solo whistle](elmo_solo_whistle) drive has two CAN ports, a CANin and a CANout. The ports are **not** isolated and they do **not** have any terminal resistor.
 
 
 ## Troubleshooting
