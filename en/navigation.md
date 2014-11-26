@@ -46,14 +46,6 @@
   - - - -
   * # Tools
 
-[Scripts]()
-
-  * [Scripts](pages/scripts.md)
-  * [Camera around](pages/camera_around.md)
-  - - - -
-  * # Misc
-  * [vision](pages/vision_scripts.md)
-
 [GUI](pages/gui.md)
 
 [Gazebo]()
@@ -79,6 +71,9 @@
   * [Development guidelines](pages/development_guidelines.md)
   * [Learning](pages/learning.md)
   * [Code Snippets](pages/code_snippets.md)
+  * [Datasets](pages/dataset.md)
+  * [Matlab](pages/matlab.md)
+  * [Scripts](pages/scripts.md)
   * [This Wiki](pages/this_wiki.md)
 
 [Project]()

@@ -1,5 +1,11 @@
 # Scripts 
 
+See also
+  * [Camera around](pages/camera_around.md)
+  * [vision](pages/vision_scripts.md)
+
+---
+
 Some scripts in the ~/scripts directory are used to execute common routine quickly and to setup some nodes via CLI wizards.
 
 The scripts in ~/scripts/utils/ contains some functions suck as //info() ask() ok()// that should be always  used in order to make them easier to use and edit.\\
