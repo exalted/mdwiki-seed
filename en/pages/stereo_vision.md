@@ -18,11 +18,13 @@ The content of stereo_only.launch is
 ```xml
 <launch>
   <param name="ROS_NAMESPACE" value="stereo" />
-  <node name="camera_node" pkg="pgr_camera" type="pgr_camera_node" output="screen" cwd="node" args="--serials 13062807 13029237">
+  <node name="camera_node" pkg="pgr_camera" type="pgr_camera_node" output="screen" cwd="node" args="--serials 13062807 13029237 -P">
     <remap from="/camera13062807/image_raw" to="/stereo/left/image_raw"/>
     <remap from="/camera13062807/camera_info" to="/stereo/left/camera_info"/>
+    <remap from="/camera13062807/set_camera_info" to="/stereo/left/set_camera_info"/>
     <remap from="/camera13029237/image_raw" to="/stereo/right/image_raw"/>
     <remap from="/camera13029237/camera_info" to="/stereo/right/camera_info"/>
+    <remap from="/camera13029237/set_camera_info" to="/stereo/right/set_camera_info"/>
   </node>
 </launch>
 ```
@@ -63,6 +65,15 @@ At the top, the unrectified camera stereo image, at the bottom the rectified one
 [camera calibration and 3d reconstruction](http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html)
 
 * For an in-depth discussion of the block matching algorithm, see pages 438-444 of Learning OpenCV. *
+
+calibration commands:
+
+```bash
+# start the cameras:
+roslaunch stereoOnly.launch
+# start the calibration node:
+rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.02395 right:=/stereo/right/image_raw left:=/stereo/left/image_raw right_camera:=/stereo/right left_camera:=/stereo/left --approximate=0.01
+```
 
 ## SLAM
 

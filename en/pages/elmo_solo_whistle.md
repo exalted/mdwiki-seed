@@ -6,6 +6,17 @@
 
 See also [Learning - Network Protocols - CAN](network_protocols_learning.md#CAN)
 
+## CAN & CANOpen
+CAN comunication is done via the [cPCI-7841](cpci-7841.md) card. See the related page for more details.
+
+## Implementation Guides:
+
+- [DS301](http://www.elmomc.com/support/manuals/MAN-CAN301IG.pdf)
+  **CANOpen** implementation
+- [DS305](http://www.elmomc.com/support/manuals/MAN-CAN305IG.pdf)
+  **LSS - Layer Setting Services** implementation
+- [DS402](http://www.elmomc.com/support/manuals/MAN-CAN402IG.pdf)
+  **CANopen device profile for drives and motion control** implementation
 
 ## Links
 

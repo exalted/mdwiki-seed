@@ -23,4 +23,6 @@ Berkeley ee249 Handouts [pt1](http://inst.cs.berkeley.edu/~ee249/fa08/Lectures/h
 
 ### Guides
 
+[CANOpen solutions - CANOpen Basics](http://www.canopensolutions.com/english/about_canopen/about_canopen.shtml)
 [Elmo MC - CANOpen Implementation Guide](http://www.elmomc.com/support/manuals/MAN-CAN301IG.pdf)
+

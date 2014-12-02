@@ -171,3 +171,5 @@ index 3e0b5ca..ea61484 100644
  #include "7841.h"
  #include <linux/interrupt.h>
 ```
+
+These changes, as for **25/11/2014**, were tested and make the driver work fine.
