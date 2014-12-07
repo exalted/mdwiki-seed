@@ -10,7 +10,7 @@ Wiring schematics:
 
 ### cPCI-7841
 
-The [cPCI-7841] card provides one of the two **120Ω** resistences at the end of its connector:
+The [cPCI-7841](cpci-7841.md) card provides one of the two **120Ω** resistences at the end of its connector:
 
 ![cpci-7841-resistor](/uploads/can-wiring-cpci7841-jumpers.png)
 
@@ -21,6 +21,9 @@ JP1 enables the terminal resistor for port0 and JP2 enables the terminal resisto
 ### Elmo solo whistle
 
 The [Elmo solo whistle](elmo_solo_whistle.md) drive has two CAN ports, a CANin and a CANout. The ports are **not** isolated and they do **not** have any terminal resistor.
+
+![elmo main power](/uploads/can-wiring-elmo-main-power.png)
+![elmo can ports](/uploads/can-wiring-elmo-can-ports.png)
 
 
 ## Troubleshooting

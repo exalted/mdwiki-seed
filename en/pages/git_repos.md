@@ -86,6 +86,7 @@ contains the **sdf** models used in gazebo.
 
 ## gazebo-worlds
 [team-diana/gazebo-worlds](https://github.com/team-diana/gazebo-worlds)
+contain some ready gazebo worlds used for testing
 
 ## ros_status_cli
 [team-diana/ros_status_cli](https://github.com/team-diana/ros_status_cli)
@@ -109,3 +110,11 @@ This repository maintains dotfiles and some configuration files
 [team-diana/scripts](https://github.com/team-diana/scripts)
 This repository contains utilities and other scripts written in bash or python, 
 
+## ipa_canopen
+[team-diana/ipa_canopen](https://github.com/team-diana/ipa_canopen)
+A fork of ipa_canopen, that can be used with the [cPCI-7841](cpci-7841.md) CAN card.
+This repository also contains some binding for python, and is going to be upgraded in order to work with a generic CAN card.
+
+## sdf2urdf
+[team-diana/sdf2urdf](https://github.com/team-diana/sdf2urdf)
+A converter from .sdf to .urdf written in ruby.

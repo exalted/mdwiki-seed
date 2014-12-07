@@ -37,33 +37,42 @@ The sdf file is available [here](https://raw.githubusercontent.com/team-diana/ga
 
 
 ## URDF 
-The urdf is available [here](https://raw.githubusercontent.com/team-diana/gazebo-models/master/urdf/rover_amalia/model.xml)
+The urdf is available [here](https://raw.githubusercontent.com/team-diana/gazebo-models/master/urdf/rover_amalia/model.urdf)
 
-warning: the SDF and URDF model currently are **not** synced.
+The urdf is us created using [team-diana/sdf2urdf](https://github.com/team-diana/sdf2urdf)
 
-In order to show the URDF model in **rviz**, download the model.xml file and in the same directory copy this file 
+warning: the converter is not completed yet, and the converted urdf model still needs manual modifications.
 
-*show.xml*
-```xml
-<launch>
-  <arg name="gui" default="true" />
-  <param name="robot_description" command="cat ./model.xml" />
-  <param name="use_gui" value="$(arg gui)"/>
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-    <rosparam param="source_list">[/ptu/state, joint_states, /motore_1_controller/joint_states, /motore_2_controller/joint_states, /motore_3_controller/joint_states, /motore_4_controller/joint_states]</rosparam>
-  </node>
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
-    <param name="use_gui" value="$(arg gui)"/>
-    <remap from="robot_description" to="robot_description" />
-  </node>
-</launch>
-```
-
-Then, launch the file and run **rviz**
+In order to use the urdf model, use the [launch files](https://github.com/team-diana/gazebo-models/tree/master/urdf/rover_amalia)
 
 ```bash
-roslaunch ./show.xml
-# in an another terminal:
-rosrun rviz rviz
+# Run the robot_state_publisher:
+roslaunch robot_state_publisher.launch
+
+# Run rviz with the same urdf model:
+roslaunch rviz.launch
 ```
+
+The **rover amalia** model publishes all the joint_states but **map -> odom** and  **base_footprint -> rover_amalia_chassis**
+which can be published with **static_transform_publisher**
+
+```bash
+rosrun tf static_transform_publisher 0 0 0 0 0 0 map odom $(( 1000/30))
+rosrun tf static_transform_publisher 0 0 0 0 0 0 base_footprint rover_amalia_chassis $(( 1000/30))
+```
+
+## Troubleshooting
+
+### Check that the tree of transform has only one root:
+
+```bash
+rosrun tf view_frames
+# View the created pdf document:
+evince frames.pdf
+```
+
+
+## Videos
+
+[Rover Amalia - Gazebo and Rviz](https://drive.google.com/file/d/0B095UfSp5Q4USUNadGhFNHdpZk0/view?usp=sharing)
 
