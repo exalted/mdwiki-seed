@@ -57,8 +57,10 @@ The **rover amalia** model publishes all the joint_states but **map -> odom** an
 which can be published with **static_transform_publisher**
 
 ```bash
-rosrun tf static_transform_publisher 0 0 0 0 0 0 map odom $(( 1000/30))
-rosrun tf static_transform_publisher 0 0 0 0 0 0 base_footprint rover_amalia_chassis $(( 1000/30))
+rosrun tf static_transform_publisher 0 0 0 0 0 0 map odom $(( 1000/30)) &
+rosrun tf static_transform_publisher 0 0 0 0 0 0 base_footprint base_link $(( 1000/30)) &
+python2 odom_publisher.py odom base_footprint /rover_amalia/odom
+python2 imu_tf_broadcaster.py base_link rover_amalia_chassis /imu_data
 ```
 
 ## Troubleshooting
@@ -70,7 +72,9 @@ rosrun tf view_frames
 # View the created pdf document:
 evince frames.pdf
 ```
+the expected tf tree should look like this:
 
+![gazebo tr tree](/uploads/gazebo_tf_tree.png)
 
 ## Videos
 
