@@ -19,6 +19,8 @@ Berkeley ee249 Handouts [pt1](http://inst.cs.berkeley.edu/~ee249/fa08/Lectures/h
 ## CANOpen 
 ---
 
+[CANOpen](can_open.md)
+
 *CANopen is a communication protocol and device profile specification for embedded systems used in automation. In terms of the OSI model, CANopen implements the layers above and including the network layer. The CANopen standard consists of an addressing scheme, several small communication protocols and an application layer defined by a device profile. The communication protocols have support for network management, device monitoring and communication between nodes, including a simple transport layer for message segmentation/desegmentation. The lower level protocol implementing the data link and physical layers is usually Controller Area Network (CAN), although devices using some other means of communication (such as Ethernet Powerlink, EtherCAT) can also implement the CANopen device profile. - [Wikipedia](http://en.wikipedia.org/wiki/CANopen)*
 
 ### Guides
