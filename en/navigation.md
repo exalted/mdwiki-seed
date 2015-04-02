@@ -71,9 +71,14 @@
   * [Development guidelines](pages/development_guidelines.md)
   * [Learning](pages/learning.md)
   * [Code Snippets](pages/code_snippets.md)
-  * [Datasets](pages/dataset.md)
+  * [Datasets](pages/datasets.md)
   * [Matlab](pages/matlab.md)
   * [Scripts](pages/scripts.md)
+  - - - -
+  * # Distros
+  * [Arch](pages/archlinux.md)
+  * [Ubuntu](pages/ubuntu.md)
+  - - - -
   * [This Wiki](pages/this_wiki.md)
 
 [Project]()
