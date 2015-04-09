@@ -77,7 +77,7 @@ rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.02395 right:
 
 ## Baseline distance
 
-See [Willow Garage - Stereo Geometry](http://pub1.willowgarage.com/~konolige/svs/disparity.htm) and the related [notebook](http://nbviewer.ipython.org/github/team-diana/team-diana.github.io/extra/notebooks/stereo_geometry.ipynb)
+See [Willow Garage - Stereo Geometry](http://pub1.willowgarage.com/~konolige/svs/disparity.htm) and the related [notebook](http://nbviewer.ipython.org/github/team-diana/team-diana.github.io/blob/master/extra/notebooks/stereo_geometry.ipynb)
 
 ## SLAM
 
