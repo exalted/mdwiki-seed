@@ -75,6 +75,10 @@ roslaunch stereoOnly.launch
 rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.02395 right:=/stereo/right/image_raw left:=/stereo/left/image_raw right_camera:=/stereo/right left_camera:=/stereo/left --approximate=0.01
 ```
 
+## Baseline distance
+
+See [Willow Garage - Stereo Geometry](http://pub1.willowgarage.com/~konolige/svs/disparity.htm) and the related [notebook](http://nbviewer.ipython.org/github/team-diana/team-diana.github.io/extra/notebooks/stereo_geometry.ipynb)
+
 ## SLAM
 
 See [stereo_vision_slam](stereo_vision_slam.md)

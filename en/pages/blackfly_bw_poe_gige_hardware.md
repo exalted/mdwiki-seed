@@ -12,6 +12,13 @@ See also [cameras](cameras.md)
 |product name | BFLY-PGE-13E4M-CS|
 |resolution| 1280x1024|
 |FPS| 60|
+|Sensor Format| 1/1.8"|
+|Pixel Size| 5.3 µm|
+
+## Lens
+
+[LENS-15F3-60C - Fujinon 6mm fixed focal length C-mount lens](http://www.ptgrey.com/6mm-12-c-mount)
+
 
 ## Stereo Vision
 
