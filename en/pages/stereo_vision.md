@@ -48,12 +48,20 @@ ROS_NAMESPACE=stereo rosrun stereo_image_proc stereo_image_proc
 ```
 This command does not output anything, but new topics (such as /stereo/right/image_rect) are published.
 
-jkkj
+## show disparity
+
+```bash
+#after starting stereo_image_proc
+rosrun image_view disparity_view image:=/stereo/disparity
+```
 
 ## Parameters
 
 [Choosing Good Stereo Parameters](http://wiki.ros.org/stereo_image_proc/Tutorials/ChoosingGoodStereoParameters)
 
+```bash
+rosrun rqt_reconfigure rqt_reconfigure
+```
 
 ## Calibration
 
@@ -73,6 +81,8 @@ calibration commands:
 roslaunch stereoOnly.launch
 # start the calibration node:
 rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.02395 right:=/stereo/right/image_raw left:=/stereo/left/image_raw right_camera:=/stereo/right left_camera:=/stereo/left --approximate=0.01
+# start the calibration node with the checkboard_01 
+rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.035 right:=/stereo/right/image_raw left:=/stereo/left/image_raw right_camera:=/stereo/right left_camera:=/stereo/left --approximate=0.01
 ```
 
 ## Baseline distance
