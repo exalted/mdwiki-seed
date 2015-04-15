@@ -15,6 +15,24 @@ Good example of a python package, with unit and integration tests
 Read:
   [catkin - configure and running unit tests](http://docs.ros.org/hydro/api/catkin/html/howto/format2/index.html#configuring-and-running-unit-tests)
 
+## Updating rosbuild package
+
+Before catkin there was rosbuild. Some packages are not yet updated. When you want to update the package remember to:
+
+1. replace the manifest.xml file with package.xml
+2. replace the references to rosbuild in CMakeLists.txt with catkin commands. Compare the existent
+CMakeLists.txt file with one from an update package in order to do this. 
+3. apply changes in the \*.cfg files:
+
+```python
+# remove this line:
+import roslib
+
+# replace 
+from dynamic_reconfigure.parameter_generator import *
+# with
+from dynamic_reconfigure.parameter_generator_catkin import *
+```
 
 ## How it works
 ---
