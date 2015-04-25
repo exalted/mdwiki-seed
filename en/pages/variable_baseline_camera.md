@@ -2,7 +2,7 @@
 
 ## Theory
 
-See [this notebook](nbviewer.ipython.org/github/team-diana/team-diana.github.io/blob/master/extra/notebooks/variable_baseline.ipynb) for error estimation.
+See [this notebook](http://nbviewer.ipython.org/github/team-diana/team-diana.github.io/blob/master/extra/notebooks/variable_baseline.ipynb) for error estimation.
 
 ### Introductory articles
 
