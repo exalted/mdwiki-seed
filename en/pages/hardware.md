@@ -46,6 +46,8 @@ http://support.robotis.com/en/product/auxdevice/interface/usb2dxl_manual.htm
 
 ![b&w GigE Camera](http://www.ptgreystore.com/content/images/thumbs/0000780_blackfly-13-mp-color-gige-poe-ev76c560.jpeg)
 
+[variable baseline camera](variable_baseline_camera.md)
+
 ## Powertrain
 ---
 
