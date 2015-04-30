@@ -28,6 +28,9 @@ int main(int argc, char** argv) {
   // Create subscriber
   ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);  
 
+  // for member methods:
+  //ros::Subscriber sub = n.subscribe("chatter", 1000, &Class::chatterCallback, this);  
+
   // spin, run until exit
   ros::spin();
 }
@@ -51,8 +54,6 @@ int main(int argc, char **argv)
   // Service
   ros::ServiceServer service = n.advertiseService("add_two_ints", add);
   ROS_INFO("Ready to add two ints.");
-  ros::spin();
-  return 0;
 
   // Client
   ros::ServiceClient client = n.serviceClient<beginner_tutorials::AddTwoInts>("add_two_ints");
@@ -63,5 +64,7 @@ int main(int argc, char **argv)
   {
     ROS_INFO("Sum: %ld", (long int)srv.response.sum);
   }
+
+  ros::spin();
 }
 ```
