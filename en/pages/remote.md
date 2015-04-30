@@ -38,6 +38,16 @@ If it is not possible to have all ports opened, it is possible to use **openvpn*
 This is due to a wrong ROS_HOSTNAME. Make sure that the machine that publishes the topic has exported ROS_HOSTNAME to **its** ip address.
 It is also possible that the remote machine cannot access the local machine. Check if the ports can be opened with netcat, in both direction.
 
+#### I changed the terminal and the topic does not seem to work anymore
+
+Remember that when you do
+
+```bash
+export ENV_VARIABLE=value
+```
+
+you are exporting that environment variable **only** for that terminal instance. You have to run that everytime!
+
 ## Links
 http://wiki.ros.org/ROS/NetworkSetup
 http://wiki.ros.org/Robots/TurtleBot/Network%20Setup
