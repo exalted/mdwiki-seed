@@ -48,6 +48,14 @@ export ENV_VARIABLE=value
 
 you are exporting that environment variable **only** for that terminal instance. You have to run that everytime!
 
+Note: you have to do this both on the rover and the remote computer terminals! 
+
+Use 
+  * rostopic info /topic_name
+  * rosservice info /service_name
+
+in order to check the ip address of the topic/service.
+
 ## Links
 http://wiki.ros.org/ROS/NetworkSetup
 http://wiki.ros.org/Robots/TurtleBot/Network%20Setup
