@@ -24,6 +24,9 @@
 
 http://support.robotis.com/en/product/auxdevice/interface/usb2dxl_manual.htm
 
+See [Dynamixel MX-64](dynamixel_mx-64.md) for USB2Dynamixel and SMPS2Dynamixel
+
+
 ### [Elmo Solo Whistle](elmo_solo_whistle.md)
 ![Solo Whistle](http://www.elmomc.com/members/NetHelp/ImagesExt/image811_0.jpg)
 

@@ -5,8 +5,12 @@ These pages contain a list of most common code, that can be used without to have
 - [Python](python_code_snippets.md)
 - [C++](cpp_code_snippets.md)
 
+## Configurations
+
+- [.launch files](launch_files_snippets.md)
+
 ## Tools
 
-Also, there are snippets for some tools:
 
 - [Catkin](catkin_snippets.md)
+- [CMake](cmake_snippets.md)
