@@ -68,3 +68,11 @@ int main(int argc, char **argv)
   ros::spin();
 }
 ```
+
+## ros params
+
+```c++
+ros::NodeHandle nh;
+nh.hasParam("/global_name")
+nh.getParam("/global_name", value_by_ref)
+```

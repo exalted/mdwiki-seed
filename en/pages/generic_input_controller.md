@@ -70,3 +70,37 @@ Run the *show_pressed.py* script, which will show the currently pressed buttons 
   Made for the diana rover gazebo model. Can be used with the keyboard. 
 
 
+## rover configuration file - PS3 - diana_powertrain_node
+
+This configuration can be used to control the real motors of the rover with the left stick of a PS3 sixaxis controller.
+
+Note: in order to run this script and the joy node on your computer while controlling the remote rover, you will have to setup the remote ROS master configuration. See [remote](remote.md)
+
+```yaml
+SkidSteer1:
+  type: skidsteer
+  source:
+    JoyJoystickCommander1:
+      type: joyjoystick
+      x_axis_index: 0
+      y_axis_index: 1
+      skip_n: 0
+  speed: 1
+  rot_multiplier: -30
+  skid_steer_topic: /set_velocity
+  clamp_below: 0.2
+```
+
+## PS3 sixaxis
+
+The PS3 sixaxis controller is compatible with ROS thanks to the joy node
+
+Use [QtSixA](http://qtsixa.sourceforge.net/) (maybe better for ubuntu) or xboxdrv.
+
+run the **joy_node** node
+
+```bash
+rosrun joy joy_node
+```
+
+and the run  the  **show_pressed.py** script in order to check if the joystick actually works. Then exit from show_pressed and run the actual controller.py script

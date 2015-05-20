@@ -32,6 +32,8 @@
   * [IO](pages/io.md)
   - - - -
   * # Powertrain
+  * [hlCANopen](pages/hlcanopen.md)
+  * [diana_powertrain](pages/diana_powertrain.md)
   - - - -
   * # Suspension
   * [Controller](pages/suspension_controller.md)
