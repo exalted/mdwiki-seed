@@ -70,6 +70,7 @@
   * [Catkin](pages/catkin.md)
   * [Unit Testing](pages/unit_testing.md)
   * [Remote ROS connection](pages/remote.md)
+  * [Remote development](pages/remote_development.md)
   * [Development guidelines](pages/development_guidelines.md)
   * [Learning](pages/learning.md)
   * [Code Snippets](pages/code_snippets.md)

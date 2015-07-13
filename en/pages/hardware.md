@@ -49,6 +49,10 @@ See [Dynamixel MX-64](dynamixel_mx-64.md) for USB2Dynamixel and SMPS2Dynamixel
 
 ![b&w GigE Camera](http://www.ptgreystore.com/content/images/thumbs/0000780_blackfly-13-mp-color-gige-poe-ev76c560.jpeg)
 
+### [Leg Accelerometers](mma7361lc.md)
+
+![MMA7361LC](https://a.pololu-files.com/picture/0J2546.1200.jpg?0605bfd009b17d81f444f8cb1d8c7b46) 
+
 [variable baseline camera](variable_baseline_camera.md)
 
 ## Powertrain
