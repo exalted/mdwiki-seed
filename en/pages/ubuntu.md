@@ -7,3 +7,8 @@ However Ubuntu does not update its packages really often, so many libraries, com
 ## Team Diana repo
 
 [repo-scripts](https://github.com/team-diana/repo-scripts) provides scripts that can be used to build the missing libraries, such as Boost. A ready-to-use repo is also provided, see the README.md
+
+## Virtual Machine
+
+For most task it is also possible to run ubuntu inside a VM. 
+See [Ubuntu - VM](ubuntu_vm.md)

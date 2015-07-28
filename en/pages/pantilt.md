@@ -28,3 +28,16 @@ position: [$pan_target, $tilt_target]
 velocity: [0.1, 0.1]
 effort: [0]"
 ```
+
+## Troubleshooting
+
+Sometime the connection computer-pantilt controller does not work. You can attempt this command in order to enstablish a connection:
+
+
+```bash
+for a in $(seq 0 1000); do 
+  echo 'a' > /dev/ttyUSB0
+done
+```
+
+Then try to restart the connection.

@@ -4,6 +4,12 @@
 
 [manual](http://support.robotis.com/en/product/dynamixel/mx_series/mx-64.htm)
 
+
+||| 
+------------- | -------------
+Input Voltage |  12V
+
+
 ## SMPS2Dynamixel
 
 
@@ -11,7 +17,7 @@
 
 [manual](http://support.robotis.com/en/product/auxdevice/interface/usb2dxl_manual.htm)
 
-[USB2Dynamixel + SMPS2Dynamixel](http://wiki.tekkotsu.org/images/b/bf/Calliope-Head-Servo-Wiring.jpg)
+![USB2Dynamixel + SMPS2Dynamixel](http://wiki.tekkotsu.org/images/b/bf/Calliope-Head-Servo-Wiring.jpg)
 
 ## Related nodes
 

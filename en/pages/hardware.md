@@ -55,9 +55,19 @@ See [Dynamixel MX-64](dynamixel_mx-64.md) for USB2Dynamixel and SMPS2Dynamixel
 
 [variable baseline camera](variable_baseline_camera.md)
 
+## PCBs
+
+### [io_adc_pcb](io_adc_pcb.md)
+![io_adc_front](/uploads/io_adc_front.png)
+
+### [power_pcb](power_pbc.md)
+![power pcb](/uploads/power_pcb_front.png)
+
 ## Powertrain
 ---
 
 ### [Solo Whistle](solo-whistle.md)
 ![Solo Whistle](http://www.elmomc.com/products/images-1/Solo-Whistle-01-b.jpg)
 
+### [Engine](wheel_engine.md)
+![wheel engine](/uploads/motor_front.png)

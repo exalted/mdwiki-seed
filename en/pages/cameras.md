@@ -233,8 +233,18 @@ Intrinsics file (*.ini) are used by image processors in order to know the camera
 They are obtained via the calibration process.
 Each file is named in this format: *intrinsicsCAMERA_SERIAL_NUMBER.ini* e.g. : intrinsics13201007.ini
 
+## Ubuntu
+
+```bash
+sudo ifconfig eth1 mtu 9000
+sudo sysctl -w net.core.rmem_max=10485760 net.core.rmem_default=10485760
+```
+
+These commands are also useful:
+
 ## FlyCapture SDK
 
+(**OLD**)
 It seems that is not possible to start multiple cameras simultaneously 
 
 ##Useful links
@@ -270,4 +280,3 @@ http://stackoverflow.com/questions/2090850/specifying-udp-receive-buffer-size-at
 http://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php
 http://sd.wareonearth.com/~phil/jumbo.html
 
-## New Notes (18/11/14)
