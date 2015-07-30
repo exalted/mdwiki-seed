@@ -17,6 +17,13 @@
   <node name="node_name" pkg="pkg_name" type="node_executable_name" output="screen" cwd="node" args="">
     <param name="param/name" value="0"/>
     <param name="param/name_2" type="string" value="hello"/>
+    <param name="somefloat1" type="double" value="3.14159"/>
+    <param name="unipolar" type="bool" value="1"/>
+    <rosparam command="load" file="$(find rosparam)/example.yaml" />
+    <rosparam>
+      a: 1
+      b: 2
+    </rosparam>
   </node>
 </launch>
 ```

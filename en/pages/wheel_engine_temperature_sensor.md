@@ -21,3 +21,14 @@ The value is measured using the [team-diana/io-adc](https://github.com/team-dian
 
 The obtained measure is influenced by the +5V and by the resistence of the KTY 84-130 at ambient temperature.
 The calibration parameters are read by the [team-diana/io-adc](https://github.com/team-diana/io-adc) node and can be obtained using the *calibrate_motor_temperature_sensor.py* script inside the same package. The script wil start a wizard and generate a **yaml** file with the calibration parameters.
+
+### Usage
+
+See also [io_adc](io_adc.md)
+
+Make sure that the **.yaml** file with the calibration parameters is available.
+
+See the temperature sensors value with:
+
+rostopic echo /io_adc/motor_temperature_sensor
+
