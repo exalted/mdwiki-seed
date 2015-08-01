@@ -8,6 +8,11 @@ However Ubuntu does not update its packages really often, so many libraries, com
 
 [repo-scripts](https://github.com/team-diana/repo-scripts) provides scripts that can be used to build the missing libraries, such as Boost. A ready-to-use repo is also provided, see the README.md
 
+## Libraries and Tools
+
+  * clang ppa http://llvm.org/apt/
+  * gcc ppa https://launchpad.net/~ubuntu-toolchain-r/+archive/ubuntu/test
+
 ## Virtual Machine
 
 For most task it is also possible to run ubuntu inside a VM. 

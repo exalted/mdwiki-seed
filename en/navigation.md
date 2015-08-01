@@ -66,17 +66,22 @@
 [Infrastructure]()
 
   * [Rover first setup](pages/rover_first_setup.md)
-  * [RViz](pages/rviz.md)
-  * [Catkin](pages/catkin.md)
-  * [Unit Testing](pages/unit_testing.md)
-  * [Remote ROS connection](pages/remote.md)
-  * [Remote development](pages/remote_development.md)
-  * [Development guidelines](pages/development_guidelines.md)
   * [Learning](pages/learning.md)
+  - - - -
+  * # Development
+  * [Development guidelines](pages/development_guidelines.md)
+  * [Continous Integration](pages/continous_integration.md)
   * [Code Snippets](pages/code_snippets.md)
   * [Datasets](pages/datasets.md)
+  * [Docker](pages/docker.md)
   * [Matlab](pages/matlab.md)
   * [Scripts](pages/scripts.md)
+  * [Remote ROS connection](pages/remote.md)
+  * [Remote development](pages/remote_development.md)
+  - - - -
+  * # Tools
+  * [RViz](pages/rviz.md)
+  * [Catkin](pages/catkin.md)
   - - - -
   * # Distros
   * [Arch](pages/archlinux.md)
@@ -88,6 +93,7 @@
 
   * [Status](pages/status.md)
   * [Roadmap](pages/roadmap.md)
+  * [Accounts](pages/accounts.md)
 
 
   <!-- A more complex navigation example: ----------------------------------------

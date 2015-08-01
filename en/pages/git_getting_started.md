@@ -1,3 +1,25 @@
+# GIT - getting started
+
+[Git](https://registry.hub.docker.com/u/teamdiana/diana/) is an extremely powerful tool that should be also known by non-programmers. Make sure you get the basics before writing any code, and **always** create a new git repo even for small project. 
+
+There are a lot of useful tutorial on the internet. 
+
+Read some basic tutorial in order to get acquainted with the terminology, then try this
+interactive tutorial:
+
+https://try.github.io/levels/1/challenges/1
+
+or this for a more visual explanation:
+
+http://pcottle.github.io/learnGitBranching/
+
+then also try to setup a your repository on **github**
+
+https://guides.github.com/activities/hello-world/
+
+
+## short quickstart (italian): 
+
 ```bash
 
 **Guide git**\\
