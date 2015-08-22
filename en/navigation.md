@@ -92,6 +92,7 @@
 [Project]()
 
   * [Status](pages/status.md)
+  * [Getting Started](pages/getting_started.md)
   * [Roadmap](pages/roadmap.md)
   * [Accounts](pages/accounts.md)
 

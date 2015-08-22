@@ -4,6 +4,14 @@ This package controls the wheel motors via the CANopen protocol and the [elmo dr
 
 It requires [hlCANopen](hlcanopen.md)
 
+## exports
+
+In order to use the package the following export is necessary in order to find boost and folly:
+
+```bash
+export LD_LIBRARY_PATH=/opt/boost/lib/:/usr/local/lib
+```
+
 
 ## diana\_powertrain\_node
 
@@ -57,16 +65,51 @@ shell -i 14
 
 When a prompt appears, the shell is ready to be used. Otherwise a connection with the elmo cannot be enstablished.
 
-#### Example commands:
+See the [command ref](http://www.elmomc.com/support/manuals/MAN-SIMCR.pdf) document for a list of available commands. Some commands returns also a result.
+It is possible to run the motor only by using the shell, using these commands for instance:
 
 ```bash
-# starts the motor
-mo=1 
-# set the velocity to 10000 JV value
-jv=10000
-# start the motor
-bg
+MO=1
+JV=10000
+BG
 ```
+
+then use 
+
+```bash
+MO=0
+```
+
+to turn off the motor.
+
+## test
+
+In order to test that the elmo and motors are working, run the **test_motor** node:
+
+```bash
+./test_motor -i 11 12 13 14
+```
+
+the values following **-i** are the can ID of the motors to test.
+this command will ask you question in order to check that everything is ok.
+
+If you want to skip the question use the **-n** flag:
+
+```bash
+./test_motor -n -i 11 12 13 14
+```
+
+If you encounter an error, try to use the shell in order to get more info. 
+Eventually you can also use the elmo [composer](http://www.elmomc.com/products/composer-description-contents-main.htm) tool and a RS-232-usb adapter if you suspect that something is wrong with the CAN interface.
+
+## info dump
+
+You can dump the informations about the motors with:
+
+```bash
+./dump_elmo_info -i 11 12 13 14
+```
+
 
 ## Control the motors with a joystick
 

@@ -1,6 +1,6 @@
 # hlCANopen
 
-[team_diana/hlCANopen](https://github.com/team_diana/hlCANopen)
+[team-diana/hlCANopen](https://github.com/team-diana/hlCANopen)
 
 hlCANopen is a C++ library that provides an high level interface for the CANopen protocol.
 
@@ -12,7 +12,10 @@ The library is used in [diana_powertrain](diana_powertrain.md)
 
 #### folly
 
+boost 1.58 must be installed
+
 in order to install folly:
+
 
 ```bash
 sudo apt-get install \
@@ -38,8 +41,9 @@ sudo apt-get install \
 
 git clone https://github.com/facebook/folly.git
 cd folly/folly
+export LD_LIBRARY_PATH=/opt/boost/lib/:/usr/local/lib:$LD_LIBRARY_PATH
 autoreconf -ivf
-./configure
+./configure CPPFLAGS="-I/opt/boost/include -I/opt/local/include" LDFLAGS="-L/opt/boost/lib -L/opt/local/lib" CXX=/usr/bin/g++-5
 make
 make check
 sudo make install

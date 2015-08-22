@@ -7,6 +7,17 @@
 
 See also [Learning - Network Protocols - CAN](network_protocols_learning.md#CAN)
 
+## Pinouts
+
+---
+
+![power](/uploads/elmo_whistle_power_pinout.png)
+
+![can](/uploads/elmo_whistle_can_pinout.png)
+
+---
+
+
 ## CAN & CANOpen
 CAN comunication is done via the [cPCI-7841](cpci-7841.md) card. See the related page for more details.
 

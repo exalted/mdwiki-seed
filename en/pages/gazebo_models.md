@@ -19,6 +19,12 @@ Use the **.xacro** format when there is duplicated code or costant values are us
 ---
 The included **build.py** script automatically runs xacro on the files inside **definitions** and writes the sdf models in the **models** directory.
 
+The script has some dependencies:
+
+```bash
+sudo pip install docopt plumbum logging coloredlogs
+```
+
 When definitions files changes, run the script to update the models: 
 
 ```bash

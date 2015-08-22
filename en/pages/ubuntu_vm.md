@@ -13,3 +13,11 @@ When you want to use devices like cameras or the ToF that requires an ethernet c
 add a VirtualBox adapter in bridged adapter mode:
 
 ![bridged adapter](http://i.stack.imgur.com/d8ZLF.png)
+
+## 3D acceleration
+
+if 3D acceleration does not work you can use software acceleration
+
+```bash
+export LIBGL_ALWAYS_SOFTWARE=1
+```

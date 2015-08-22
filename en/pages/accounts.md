@@ -9,3 +9,5 @@ We use a lot of different online platform and services. Refer to the team leader
 [docker/teamdiana](https://registry.hub.docker.com/repos/teamdiana/)
 
 [facebook/teamdiana](https://www.facebook.com/teamdiana)
+
+[launchpad/teamdiana](https://launchpad.net/~teamdiana)
