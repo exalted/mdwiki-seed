@@ -1,5 +1,7 @@
 # Dynamixel Motor
 
+Note: old. See [dynamixel_motor](dynamixel_motor.md)
+
 [github repository](https://github.com/team-diana/suspension)
 
 ## Notes

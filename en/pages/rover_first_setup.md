@@ -2,7 +2,19 @@
 
 This page contains an how-to to bring up the rover after major system break, hardware failure or apocalyptic events.
 
+## Install udev rules
+
+write this into */etc/udev/rules.d/suspension_port.rules*
+
+```bash
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="AD01UXQC", SYMLINK+="suspension_port", MODE="0777"
+
+
+```
+
 ## Bring the rover up after ubuntu installation
+
+Warning: this section is old, do not use it 
 
 Note: please make sure to have the following tools installed:
 
