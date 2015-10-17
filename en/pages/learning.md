@@ -12,3 +12,6 @@ The work we do requires knowledge in many different fields. Here we put links to
 [Learning - Statistics And Probability](statistics_learning.md)
 [Learning - Machine Learning](machine_learning_learning.md)
 
+## Tutorials
+
+[OpenCV tutorials](opencv_tutorials.md)

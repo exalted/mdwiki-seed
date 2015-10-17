@@ -1,5 +1,7 @@
 # Learning - Computer Vision
 
+see [OpenCV tutorials](opencv_tutorials.md)
+
 ## Books
  - Learning OpenCV: Computer Vision with the OpenCV Library -	Gary Bradski, Adrian Kaehler - O'Reilly 
 
