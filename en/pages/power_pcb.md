@@ -32,4 +32,7 @@ These hall-effect current transducers for **elmo** and **suspensions**.
 [website](http://www.lem.com/hq/en/component/option,com_catalog/task,displaymodel/id,64.04.25.005.0/)
 [datasheet](http://www.lem.com/docs/products/htb_sp5_e.pdf)
 
+## Other images
 
+![power pcb](/uploads/power_pcb_front_2.png)
+![power pcb](/uploads/power_pcb_back_2.png)
