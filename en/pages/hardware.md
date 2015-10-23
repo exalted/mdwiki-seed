@@ -60,7 +60,7 @@ See [Dynamixel MX-64](dynamixel_mx-64.md) for USB2Dynamixel and SMPS2Dynamixel
 ### [io_adc_pcb](io_adc_pcb.md)
 ![io_adc_front](/uploads/io_adc_front.png)
 
-### [power_pcb](power_pbc.md)
+### [power_pcb](power_pcb.md)
 ![power pcb](/uploads/power_pcb_front.png)
 
 ## Powertrain
