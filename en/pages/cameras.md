@@ -280,3 +280,33 @@ http://stackoverflow.com/questions/2090850/specifying-udp-receive-buffer-size-at
 http://wwwx.cs.unc.edu/~sparkst/howto/network_tuning.php
 http://sd.wareonearth.com/~phil/jumbo.html
 
+## Rover Trials
+
+working with:
+```bash
+n. camera: 2
+framerate: 20 fps
+resolution 640x512
+mtu: 9000
+```
+
+
+```bash
+n. camera: 2
+framerate: 45 fps
+resolution 640x512
+mtu: 9000
+num. buffer: 2
+resend enable: both
+```
+
+```bash
+n. camera: 3
+b&w framerate: 5 fps
+b&w resolution 640x512
+c framerate: 3 fps
+c resolution 1024x1068
+mtu: 9000
+num. buffer: 2
+resend enable: both
+```

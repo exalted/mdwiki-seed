@@ -12,14 +12,13 @@ This Gazebo plugins virtualizes a [dynamixel motor](dynamixel_mx-64.md).
 
 ### Subscribes:
 ```bash
-*/command
-*/arm/command
-*/command
+/suspension1/command  # Float64 - target value of the angle of the suspension
 ```
+
 ### Publishes:
 ```bash
-*/state
-```
+*/suspension1/state # Float64 - this topic outputs the current value of the angle of the suspension
+ ```
 
 ### Provides services:
 ```bash

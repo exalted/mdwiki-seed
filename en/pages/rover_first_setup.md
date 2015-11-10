@@ -8,8 +8,12 @@ write this into */etc/udev/rules.d/suspension_port.rules*
 
 ```bash
 SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="AD01UXQC", SYMLINK+="suspension_port", MODE="0777"
+```
 
+and this in /etc/udev/rules.d/pantilt_port.rules
 
+```bash
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="A9012XPP", SYMLINK+="pantilt_port", MODE="0777"
 ```
 
 ## Bring the rover up after ubuntu installation
