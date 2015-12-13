@@ -43,6 +43,7 @@
   * [Pantilt](pages/pantilt.md)
   - - - -
   * # Navigation
+  * [SLAM](pages/slam.md)
   * [Pathfinding](pages/pathfinding.md)
   * [Pathfinding - *Planning*](pages/pathfinding-planning.md)
   - - - -

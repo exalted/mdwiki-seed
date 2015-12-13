@@ -43,3 +43,20 @@ Add packages:
 # inside the repository directory
 reprepro -b . includedeb trusty ../*.deb
 ```
+
+## Build package
+
+#### commands: 
+
+Create the directory with all the files needed for building a debian package.
+```bash
+
+make_ros_deb.rb create --deb_package_name "libhlcanopen" --source_dir hlCANopen --maintainer_id 'Vincenzo Giovanni Comito (ubuntu repository key) <clynamen@gmail.com>' --cmake_extra_options CMAKE_CXX_COMPILER=/usr/bin/g++-5,BOOST_ROOT=/opt/boost --trace
+```
+
+Build the package using the data of the previous directory
+```bash
+dpkg-buildpackage
+```
+
+The package is created in the parent directory.

@@ -2,7 +2,11 @@
 
 Warning: 
 ALWAYS remember to check the CPU temperature while dealing with the cameras. Image processing is intensive and the ventilation is not optimal. 
-Open a terminal, and after logging in with ssh, check the temperatures with the ```watch sensors``` command
+Open a terminal, and after logging in with ssh, check the temperatures with 
+
+```bash
+watch sensors
+``` 
 
 See also [stereo_vision](stereo_vision.md) and [stereo_vision_slam](stereo_vision_slam.md)
 
@@ -12,6 +16,14 @@ The camera node is avilable at [team-diana/pgr_camera](https://github.com/team-d
 The parameters are:
 ```bash
 --serials [list of camera serial number separated by space] 
+
+## Image Mode
+
+Avilable image modes are 
+
+  - 0 - all pixel scan
+  - 1 - 2x2 binning
+  - 7 - rolling shutter
 ```
 
 ## Hardware
@@ -298,6 +310,15 @@ resolution 640x512
 mtu: 9000
 num. buffer: 2
 resend enable: both
+
+```bash
+n. camera: 2 + tof
+framerate: 30 fps
+resolution 1024x1280
+mtu: 9000
+num. buffer: 1
+delay: 3000
+resend enable: none
 ```
 
 ```bash
@@ -309,4 +330,16 @@ c resolution 1024x1068
 mtu: 9000
 num. buffer: 2
 resend enable: both
+
 ```
+
+```bash
+n. camera: 2 + ToF
+b&w framerate: 50 fps
+b&w resolution 640x512
+mtu: 9000
+packet delay = 3000
+height: 512
+width: 640
+```
+

@@ -12,6 +12,8 @@
 ### [cPCI-7841](cpci-7841.md)
 ![cPCI-7841](http://www.adlinktech.com/PD/photo/display/PCI-7841+cPCI-7841/PCI-7841+cPCI-7841_bimg_en_2.jpg)
 
+### [cPS-H325/24]
+
 ## Suspensions
 ---
 
@@ -73,3 +75,7 @@ See [Dynamixel MX-64](dynamixel_mx-64.md) for USB2Dynamixel and SMPS2Dynamixel
 
 ### [Engine](wheel_engine.md)
 ![wheel engine](/uploads/motor_front.png)
+
+### [CE-300 encoder]
+
+[datasheet](http://www.microesystems.com/sites/default/files/Data_Sheet-ChipEncoder_CE300.pdf)

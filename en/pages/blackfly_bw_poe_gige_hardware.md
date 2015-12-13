@@ -27,3 +27,4 @@ See [stereo_vision](stereo_vision.md)
 ## Links
 
 [datasheet](http://blackfly.ptgrey.com/_PGR_Uploads/PGRNA/files/Blackfly-datasheet.pdf)
+[technical reference](https://www.ptgrey.com/support/downloads/10113/)
