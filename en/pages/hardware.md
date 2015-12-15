@@ -43,6 +43,10 @@ See [Dynamixel MX-64](dynamixel_mx-64.md) for USB2Dynamixel and SMPS2Dynamixel
 
 ![MTi-300](http://shop.xsens.com/SiteFiles/temp/92dec65752ff90fc867f76c51bb4b817-800x800.png)
 
+### [IMU 6DOF Razor](6dof_razor.md)
+
+![6DOF Razor](https://cdn.sparkfun.com//assets/parts/3/0/8/1/09431-01.jpg)
+
 ### [1.3 MP **Color** Blackfly PoE GigE Camera](blackfly_color_poe_gige_hardware.md)
 
 ![color GigE Camera](http://www.ptgreystore.com/content/images/thumbs/0000781_blackfly-13-mp-color-gige-poe-ev76c560.jpeg)
@@ -50,6 +54,7 @@ See [Dynamixel MX-64](dynamixel_mx-64.md) for USB2Dynamixel and SMPS2Dynamixel
 ### [1.3 MP **B&W** Blackfly PoE GigE Camera](blackfly_bw_poe_gige_hardware.md)
 
 ![b&w GigE Camera](http://www.ptgreystore.com/content/images/thumbs/0000780_blackfly-13-mp-color-gige-poe-ev76c560.jpeg)
+
 
 ### [Leg Accelerometers](mma7361lc.md)
 

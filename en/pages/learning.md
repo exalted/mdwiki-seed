@@ -15,3 +15,9 @@ The work we do requires knowledge in many different fields. Here we put links to
 ## Tutorials
 
 [OpenCV tutorials](opencv_tutorials.md)
+
+[Image Processor, stereo odometry and Point Cloud](imageproc_stereoodom_pcl_tutorial.md)
+
+## Common commands
+
+[ubuntu common commands](ubuntu_common_commands.md)
