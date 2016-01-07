@@ -94,6 +94,8 @@ Mac OS
 
 The easiest way to serve up static sites on a Mac is to use [Anvil](http://anvilformac.com). Go ahead and download it from their website, install and add a site using the status bar icon: simply select the folder where your wiki is located on your Mac.
 
+If you don't want to donwload any apps, you can use the Terminal on your Mac and pythong. To do this, go to your site folder in the Terminal app and type `python -m SimpleHTTPServer 8000`. This will start running a local server which you can navigate to by typing the URL localhost:8000 in any web browser.
+
 Windows
 -------
 
