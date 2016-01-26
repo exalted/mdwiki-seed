@@ -58,7 +58,7 @@ _All file references here are relative to their respective language folder._
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| `index.md` | File | Starting poing (a.k.a. "home page") for your wiki. **Note this is not the `index.html`, but `index.md`**! |
+| `index.md` | File | Starting point (a.k.a. "home page") for your wiki. **Note this is not the `index.html`, but `index.md`**! |
 | `navigation.md` | File | Various settings of your wiki (e.g., name of your wiki, items in the navigation bar at the top, etc.) |
 | `config.json` | File | If you don't know what this is for, don’t touch it. |
 | `pages` | Folder | Ideally, inside this folder, you create one `*.md` file for every page inside your wiki (e.g., `foo.md`, `much-longer-names-are-also-okay.md`, etc.) You can also create as many subfolders as you need, just remember to link them accordingly. |
