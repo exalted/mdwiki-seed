@@ -99,7 +99,7 @@ If you don't want to download any apps, you can use the Terminal on your Mac and
 Windows
 -------
 
-> This section needs some :heart:.
+You can use [Fenix](http://fenixwebserver.com) to host a static site on windows. Fenix also comes with lots of advanced functionality that you might not use. Fenix can also run on a Mac.
 
 Linux
 -----
