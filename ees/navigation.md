@@ -22,6 +22,8 @@
 [About](pages/about.md)
 [Download](pages/download.md)
 
+[Help](help/picbed.md)
+
 <!-- A more complex navigation example: ----------------------------------------
 
 [Menu Item 1]()
