@@ -21,8 +21,9 @@
 
 [About](pages/about.md)
 [Download](pages/download.md)
-[Projects](Projects.md)
-[Guides](guides.md)
+[Projects](pages/projects.md)
+[Guides](pages/guides.md)
+
 <!-- A more complex navigation example: ----------------------------------------
 
 [Menu Item 1]()
