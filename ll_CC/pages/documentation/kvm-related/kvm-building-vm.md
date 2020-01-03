@@ -27,21 +27,17 @@ virsh shutdown <vm-name>
 * Destroy the VM
 ```
 
-```
-
 
 
 ## Set up network interface ##
 
-```
-# ubuntu to configuration
-
-```
 
 
 ## Method 2 - Using the virt-install ##
+```
+# start a vim build to control via vnc 
 virt-install --name <virtual-name> --ram 2048 --file=/home/anpham/images/ --vnc --cdrom=/
-
+```
 
 # Sytem testing #
 
@@ -51,7 +47,7 @@ Define how you are going to build your system
 - memory usuage
 - usb passing through
 - pci passing through
-
+- method commnicate with vm (console, ssh, vnc)
 
 
 
