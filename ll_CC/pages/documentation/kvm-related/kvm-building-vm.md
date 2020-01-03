@@ -1,23 +1,23 @@
 # Howto create a vm #
-- The purpose of this article is describing the process of building a vm for system testing.
+The purpose of this article is describing the process of building a vm for system testing.
 
-# Descriptions #
+## Descriptions ##
 This guide is used to build a vm. The process inludes netwok configuration, storage creating, and memory allocating. 
 
-# Definition & Concept #
+## Definition & Concept ##
 - domain~vmname
 - storage pool (could me a directory file or block device)
  To generate storage pool to store iso images, type this following command.
 `virsh`
 
-# Steps to build the vm #
+## Steps to build the vm ##
 0. precheck if libvirt is installed and enabled.
 1. create the storage pool
 2. Naming vm domain
 
 
 
-# Manage kvm #
+## Manage kvm ##
 `virh list` to view current running vm
 
 * Remove the VM ##
@@ -29,7 +29,7 @@ virsh shutdown <vm-name>
 
 
 
-## Set up network interface ##
+# Set up network interface #
 
 
 
