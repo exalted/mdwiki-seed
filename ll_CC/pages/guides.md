@@ -1,4 +1,4 @@
 # Sytem Building
-[Build VM (kvm) for system testing](/home/anpham/Documents/writing/publication/anpham.github.io/web2/Profile-wiki/ll_CC/pages/documentation/kvm-related)
+[Build VM (kvm) for system testing](documentation/kvm-related/kvm-building-vm.md)
 [Manage/confige bluetooth devices via cli]()
 
