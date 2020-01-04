@@ -2,16 +2,16 @@
 The purpose of this article is describing the process of building a vm for system testing.
 
 ## Descriptions ##
-This guide is used to build a vm. The process inludes netwok configuration, storage creating, and memory allocating. 
+This guide is used to build a vm. The process includes network configuration, storage creating, and memory allocating. 
 
 ## Definition & Concept ##
-- domain~vmname
+- domain~VM name
 - storage pool (could me a directory file or block device)
  To generate storage pool to store iso images, type this following command.
 `virsh`
 
 ## Steps to build the vm ##
-0. precheck if libvirt is installed and enabled.
+0. Pre check if libvirt is installed and enabled.
 1. create the storage pool
 2. Naming vm domain
 
@@ -25,7 +25,6 @@ This guide is used to build a vm. The process inludes netwok configuration, stor
 virsh shutdown <vm-name>
 ```
 * Destroy the VM
-```
 
 
 
@@ -39,7 +38,7 @@ virsh shutdown <vm-name>
 virt-install --name <virtual-name> --ram 2048 --file=/home/anpham/images/ --vnc --cdrom=/
 ```
 
-# Sytem testing #
+# System testing #
 
 Define how you are going to build your system
 - block device
@@ -47,7 +46,7 @@ Define how you are going to build your system
 - memory usuage
 - usb passing through
 - pci passing through
-- method commnicate with vm (console, ssh, vnc)
+- method communicate with vm (console, ssh, vnc)
 
 
 
