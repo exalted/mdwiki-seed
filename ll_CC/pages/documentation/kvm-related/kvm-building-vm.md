@@ -27,7 +27,8 @@ To verify your pool
 virsh pool-list --all --details
 
 ## Steps to build the vm ##
-0. Pre check if libvirt is installed and enabled.
+0. To pre-check if libvirt is installed and enabled, type the following command 
+
 1. Create the storage pool
 2. Name the vm domain
 
