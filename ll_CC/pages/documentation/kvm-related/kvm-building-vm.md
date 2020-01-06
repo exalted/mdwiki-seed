@@ -28,13 +28,13 @@ virsh pool-list --all --details
 
 ## Steps to build the vm ##
 0. Pre check if libvirt is installed and enabled.
-1. create the storage pool
-2. Naming vm domain
+1. Create the storage pool
+2. Name the vm domain
 
 
 
 ## Manage kvm ##
-`virh list` to view current running vm
+Type `virh list` to view current running vm
 
 * Remove the VM ##
 ```
