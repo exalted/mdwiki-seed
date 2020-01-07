@@ -19,7 +19,6 @@ This part is used to describe the process of setting up block device to use for 
 ```
 virsh pool-define-as <pool-name> --type dir --target <directory_to_store>
 virsh pool-autostart <pool-name> 
-#or
 virsh pool-start <pool-name>
 ```
 
@@ -34,7 +33,7 @@ To verify your pool
 ## Manage kvm ##
 Type `virh list` to view current running vm
 
-- Remove the VM ##
+- To shut down the VM ##
 ```
 virsh shutdown <vm-name>
 ```
@@ -47,8 +46,9 @@ virsh shutdown <vm-name>
 
 
 ## Method 2 - Using the virt-install ##
+
 ```
-# start a vim build to control via vnc 
+# start a VM build to control via vnc 
 virt-install --name <virtual-name> --ram 2048 --file=/home/anpham/images/ --vnc --cdrom=/
 ```
 
