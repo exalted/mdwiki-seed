@@ -1,7 +1,7 @@
 # Howto create a vm #
 The purpose of this article is describing the process of building a vm for system testing.
 
-## Descriptions ##
+## Description ##
 This guide is used to build a vm. The process includes network configuration, storage creating, and memory allocating. 
 
 ## Definition & Concept ##
