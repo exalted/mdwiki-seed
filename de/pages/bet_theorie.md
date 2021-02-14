@@ -1,7 +1,7 @@
 # Betriebstechnik Theorie Inhalte
 
-[Warteschlangentheorie](Warteschlangentheorie.md)
+[Warteschlangentheorie](../posts/Warteschlangentheorie.md)
 
-[Klassifikation Produktionsprozesse](./Klassifikation_Produktionsprozesse.md)
+[Klassifikation Produktionsprozesse](./posts/Klassifikation_Produktionsprozesse.md)
 
-
+[Flussdiagramme](./posts/Flussdiagramme.md)
