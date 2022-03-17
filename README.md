@@ -11,7 +11,7 @@ Whenever you feel stuck, go to [MDwiki's own site](http://mdwiki.info) for furth
 One Wiki Only? Fork It.
 -----------------------
 
-First off fork this repo and call it something like `<MyProject>-wiki`.
+First off [fork this repo](https://github.com/exalted/mdwiki-seed/fork) and call it something like `<MyProject>-wiki`.
 
 Multiple Wikis? Clone It.
 -------------------------
