@@ -20,6 +20,17 @@
   -->
 
 [About](pages/about.md)
+
+  * # SubMenu Heading 1
+  * [SubMenu Item 1](pages/download.md)
+  * [SubMenu Item 2](pages/download.md)
+  - - - -
+  * # SubMenu Heading 2
+  * [SubMenu Item 3](pages/download.md)
+  - - - -
+  * # SubMenu Heading 3
+  * [SubMenu Item 3](pages/download.md)
+
 [Download](pages/download.md)
 
 <!-- A more complex navigation example: ----------------------------------------
